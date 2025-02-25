@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="NEW.css">
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NQJ9T6J3SX"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-NQJ9T6J3SX');
+</script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        /* background: url('https://t4.ftcdn.net/jpg/03/37/96/33/360_F_337963325_EJuPjWslX3vAFxJ59L3y1cm6IsSfo07s.jpg') no-repeat center center/cover; */
+    }
+
+    /* Header Styles */
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #000;
+        z-index: 10;
+        width: 100%;
+        height: 80px;
+        /* Fixed navbar height */
+    }
+
+    .logo img {
+        height: 70px;
+        /* Set the height of the logo */
+        width: auto;
+        /* Maintain the aspect ratio */
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links li {
+        margin: 0 15px;
+    }
+
+    .nav-links li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+        color: #f0a500;
+    }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px 0;
+    }
+
+    /* Dropdown styling */
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropbtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .arrow {
+        margin-left: 5px;
+        font-size: 20px;
+        transition: transform 0.3s ease;
+        color: #c18c1a;
+        height: 20px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        min-width: 160px;
+        z-index: 1000;
+        border-radius: 5px;
+        padding: 15px 0;
+    }
+
+    .dropdown-content li {
+        padding: 10px 20px;
+        list-style: none;
+        white-space: nowrap;
+    }
+
+    .dropdown-content li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .dropdown-content.active {
+        display: flex;
+        /* Ensure proper stacking for responsive design */
+        flex-direction: column;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .dropdown-content li a:hover {
+        color: #f0a500;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .arrow {
+        transform: rotate(180deg);
+    }
+
+    /* Responsive adjustments */
+
+    @media (max-width: 768px) {
+        .dropdown-content {
+            position: static;
+            background-color: #000;
+            box-shadow: none;
+            border-radius: 0;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 1100px) {
+        .nav-links {
+            position: absolute;
+            top: 70px;
+            /* Positioned below navbar */
+            right: 0;
+            background-color: #000;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            display: none;
+            padding: 10px 0;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 10px 0;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+
+        .logo img {
+            height: 60px;
+        }
+    }
+
+    /* Main Section Styling */
+
+    .main-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-image: url('Assets/edited lyfex.png');
+        background-size: cover;
+        background-position: center;
+        min-height: 90vh;
+        padding: 40px;
+        color: white;
+    }
+
+    /* Main Title Styling */
+
+    .main-title {
+        font-size: 40px;
+        font-family: 'Reckless', Georgia, sans-serif;
+        font-weight: bold;
+        color: white;
+        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+        margin-bottom: 30px;
+        margin-left: 19rem;
+    }
+
+    /* Welcome Board Styling */
+
+    .welcome-board {
+        padding: 20px;
+        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+        border-radius: 8px;
+        width: 50%;
+        max-width: 560px;
+        text-align: left;
+        margin-top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .welcome-board h1,
+    .welcome-board h2 {
+        /* color: #dcdcdc; */
+        font-weight: bold;
+        margin-left: -6rem;
+    }
+
+    .welcome-board h1 {
+        font-size: 32px;
+        line-height: 1.5;
+        margin-top: 30px;
+    }
+
+    .welcome-board h2 {
+        font-size: 28px;
+        line-height: 1.5;
+        /* margin-bottom: 20px; */
+    }
+
+    .pp {
+        margin-top: 20px;
+        font-size: 25px;
+        margin-left: -100px;
+    }
+
+    /* Button Container Styling */
+
+    .button-container {
+        display: none;
+        /* Hidden by default */
+        flex-direction: row;
+        /* Buttons in a row */
+        justify-content: center;
+        gap: 30px;
+        margin: 40px 0;
+    }
+
+    /* Individual Button Styling */
+
+    .button {
+        background-color: #f0a500;
+        text-decoration: none;
+        color: black;
+        padding: 16px;
+        border-radius: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        border-color: #000;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        min-width: 100px;
+        margin-top: 0px;
+    }
+
+    .button:hover {
+        background-color: #d18b00;
+    }
+
+    /* Join Button Styling */
+
+    #join-button {
+        background-color: #f0a500;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-left: 18rem;
+        margin-top: 30px;
+        transition: background-color 0.3s ease;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    #join-button:hover {
+        background-color: #c18c1a;
+    }
+
+    /* Responsive Design for Mobile Screens */
+
+    @media (min-width:300px) and (max-width: 768px) {
+        .main-title {
+            display: none;
+        }
+
+        /* Adjust Welcome Board for Mobile */
+        .welcome-board {
+            width: 90%;
+            max-width: none;
+            padding: 10px;
+            text-align: center;
+            transform: none;
+            margin: 0px auto;
+            position: relative;
+            top: auto;
+            left: auto;
+        }
+
+        .welcome-board h1,
+        .welcome-board h2 {
+            /* font-size: 24px; */
+            margin: 10px 0;
+            text-align: center;
+            margin-left: 0;
+        }
+
+        .welcome-board h1 {
+            font-size: 32px;
+        }
+
+        .welcome-board h2 {
+            font-size: 26px;
+            white-space: nowrap;
+            margin-top: 50px;
+        }
+
+        .pp {
+            text-align: center;
+            margin: auto;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        #join-button {
+            padding: 12px 20px;
+            font-size: 16px;
+            margin-top: 15px;
+            width: 100%;
+            max-width: 200px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .main-section {
+            padding: 20px;
+        }
+
+        .main-title {
+            font-size: 32px;
+        }
+
+        .welcome-board {
+            width: 70%;
+        }
+
+        .button-container {
+            gap: 15px;
+        }
+    }
+
+    @media (max-width: 743px) {
+        .main-section {
+            background: url('../images//MainBanner_Mobile.png');
+        }
+
+        .welcome-board {
+            width: 100%;
+            padding: 10px;
+            margin-top: 60px;
+            /* margin: 0 auto; */
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .welcome-board h1 {
+            font-size: 32px;
+            white-space: nowrap;
+            margin: 120px -30px 20px 0;
+        }
+
+        .welcome-board h2 {
+            font-size: 24px;
+            margin-left: 20px;
+            align-items: center;
+        }
+
+        .welcome-board p {
+            font-size: 22px;
+            width: 100%;
+            font-weight: 600;
+            word-break: break-word;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        #join-button {
+            width: 120px;
+            font-size: 16px;
+            margin: 0;
+            margin-top: 40px;
+        }
+
+        .button {
+            padding: 10px 15px;
+        }
+    }
+
+    .contact-container {
+        width: 100%;
+        background-color: whitesmoke;
+        /* color: white; */
+        text-align: center;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-container h1 {
+        font-size: 2.5rem;
+        color: #000;
+    }
+
+    .container {
+        background-color: #eba037;
+        width: 84%;
+        /* width: 1300px; */
+        margin: 20px auto;
+        text-align: center;
+        padding: 0px;
+        display: flex;
+        flex-direction: row;
+        background: url('Assets/cc.jpg');
+        height: 590px;
+        background-size: initial;
+        margin: 10px auto;
+    }
+
+    .form {
+        margin: 10rem 10rem 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        background-color: #FFB54E;
+        border-radius: 9px;
+        border: 2px solid rgb(122, 62, 24);
+        padding: 2px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 500px;
+    }
+
+    .form-item .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 55px;
+        height: 55px;
+        font-size: 30px;
+        margin-right: 15px;
+    }
+
+    .form-item input {
+        outline: none;
+        border: none;
+        flex: 1;
+        font-size: 64px !important;
+        background-color: transparent;
+        color: #000;
+    }
+
+    .enquiry-con {
+        background: #FFB54E;
+        padding: 40px 20px;
+        padding-top: 10px;
+        position: relative;
+        text-align: center;
+    }
+
+    .hanging-icons {
+        position: absolute;
+        top: 0;
+        right: 0%;
+        width: 450px;
+        height: auto;
+    }
+
+    .triangle-pattern {
+        position: absolute;
+        bottom: 0px;
+        left: 0%;
+        width: 120px;
+        height: auto;
+    }
+
+    .enquiry-container {
+        padding: 30px 0;
+        width: 90%;
+        max-width: 750px;
+        height: auto;
+        position: relative;
+        left: -10%;
+        margin: 0 auto;
+        border-radius: 10px;
+        z-index: 1;
+    }
+
+    .enquiry-container h1 {
+        font-size: 3.5rem;
+        text-shadow: 10px 18px 20px rgba(0, 0, 0, 0.1);
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    .enquiry-form input,
+    .enquiry-form textarea {
+        width: 99%;
+        padding: 10px;
+        padding-right: 0px;
+        margin: 10px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1.3rem;
+    }
+
+    textarea {
+        height: 200px;
+    }
+
+    .enquiry-form .row {
+        display: flex;
+        gap: 20px;
+    }
+
+    .enquiry-form .row input {
+        flex: 1;
+    }
+
+    .enquiry-form button {
+        width: 30%;
+        margin-top: 30px;
+        padding: 10px;
+        background: #9a6316;
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 1.1rem;
+        cursor: pointer;
+        /* transition: background 0.3s ease; */
+    }
+
+    .enquiry-form button:hover {
+        background: #744504;
+        color: #fff;
+    }
+
+    .enquiry-form select {
+        /* width: 40%; */
+        /* Matches other inputs */
+        padding: 10px;
+        margin: 10px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }
+
+    /* footer css */
+
+    footer {
+        background-color: black;
+        color: white;
+        padding: 40px 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .footer-column h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        color: #f0a500;
+    }
+
+    .footer-column p,
+    .footer-column a {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #dcdcdc;
+        text-decoration: none;
+    }
+
+    .footer-column a:hover {
+        color: #eba037;
+    }
+
+    .social-media-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .social-media-icons a {
+        font-size: 20px;
+        color: #dcdcdc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .social-media-icons a:hover {
+        color: #eba037;
+    }
+
+    .footer-bottom-bar {
+        text-align: center;
+        margin-top: 30px;
+        border-top: 1px solid #444;
+        padding-top: 10px;
+    }
+
+    .cta-button {
+        background-color: #f0a500;
+        color: black !important;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 12px !important;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .cta-button:hover {
+        background-color: #e58600;
+    }
+
+    /* Responsive adjustments */
+
+    @media (max-width: 768px) {
+        .contact-container {
+            padding: 17px;
+        }
+
+        .contact-container h1 {
+            font-size: 1.5rem;
+        }
+
+        .triangle-logo {
+            display: none;
+        }
+
+        .cta-button {
+
+            font-size: 10px !important;
+
+        }
+    }
+
+    @media (max-width: 768px) {
+        .navbar a {
+            font-size: 15px;
+            padding: 0px;
+        }
+
+        .navbar {
+            gap: 20px;
+            padding: 10px;
+            width: 100%;
+            display: flex;
+        }
+
+        .triangle-logo img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .container .form {
+            margin: auto;
+        }
+
+        .form-item {
+            flex-direction: column;
+            margin: 20px auto;
+            width: 400px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .enquiry-form .row {
+            flex-direction: column;
+        }
+
+        .hanging-icons {
+            width: 290px;
+        }
+
+        .triangle-pattern {
+            width: 90px;
+        }
+
+        .enquiry-con {
+            width: 100%;
+        }
+
+        .form-item {
+            display: flex;
+            flex-direction: row;
+            padding: 15px;
+        }
+
+        .enquiry-container {
+            width: 90%;
+            max-width: 350px;
+            position: relative;
+            left: 0%;
+            margin: 0 auto;
+            border-radius: 10px;
+            padding: 30px 20px;
+            z-index: 1;
+        }
+
+        .enquiry-container h1 {
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .enquiry-container button {
+            width: 250px;
+            font-size: 20px;
+            padding: 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        footer {
+            width: 100%;
+        }
+
+        .footer-container {
+            align-items: flex-start;
+        }
+
+        .footer-column {
+            margin-bottom: 20px;
+        }
+
+        .contact-container {
+            width: 100%
+        }
+
+        .form {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .form-item {
+            justify-content: center;
+        }
+
+        .cta-button {
+
+            font-size: 10px !important;
+
+        }
+    }
+
+    @media screen and (min-width:302px) and (max-width:600px) {
+        .form-item {
+            width: 300px;
+            height: 100px;
+            margin: 20px auto;
+        }
+
+        .navbar {
+            width: 100%;
+        }
+
+        .contact-container,
+        .container {
+            width: 100%;
+        }
+
+        .cta-button {
+
+            font-size: 10px !important;
+
+        }
+    }
+      .fix{
+        width: 10%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
+      .mainnav{
+      display: flex;
+      width: 80%;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @media (max-width: 490px) {
+        .mainnav{
+            width: 50%;
+        }
+    }
+    @media (max-width: 980px) {
+        .mainnav{
+            width: 55%;
+        }
+    }
+</style>
+</style>
+
+
+<body>
+
+
+    <nav class="navbar">
+        <div class="mainnav">
+            <div class="logo">
+                <a href="index.html"><img src="Assets/Logo.png" alt="LYFeX Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="homepage.html" id="dashboardButton" style="display: none;">Dashboard</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">
+                        Programs <span class="arrow">&#9662;</span>
+                    </a>
+                    <ul class="dropdown-content">
+                        <li><a href="insurance.html">Insurance</a></li>
+                        <li><a href="Job_Shadowing.html">Shadowing</a></li>
+                        <li><a href="longterm.html">Long Term Internship</a></li>
+                        
+                    </ul>
+                </li>
+                <li><a href="Mentors.html">Mentors</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li class="mentor-btn"><a href="mentorform.html" id="join">Join as Mentor</a></li>
+            </ul>
+        </div>
+        <div class="fix">
+
+            <div class="auth-links">
+                <button id="showProfile" class="btn-profile hidden">
+                    <img
+                    src="https://ui-avatars.com/api/?name=User&background=F5A623&color=fff"
+                    alt="Profile"
+                    class="profile-img"
+                    />
+                </button>
+                <button id="showLoginBtn" class="btn-login">Login</button>
+                <button id="showRegisterBtn" class="btn-register">Register</button>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <script>
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const dropdownToggles = document.querySelectorAll('.dropbtn');
+
+            // Toggle the mobile menu
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Toggle the dropdown menu on click
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent the default link behavior
+                    const dropdownContent = toggle.nextElementSibling; // Get the dropdown content
+                    dropdownContent.classList.toggle('active'); // Toggle visibility of the dropdown
+
+                    // Close other dropdowns (optional, for better UX)
+                    dropdownToggles.forEach(otherToggle => {
+                        if (otherToggle !== toggle) {
+                            const otherDropdown = otherToggle.nextElementSibling;
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        </script>
+    </nav>
+
+<div id="dashboard" class="dashboard">
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+
+    </div>
+
+    <div class="container">
+
+        <div class="form">
+            <div class="form-item">
+                <span class="icon">📧</span>
+                <span class="input">hi@thelyfex.com</span>
+            </div>
+
+            <div class="form-item" style="background-color: #ce923e;">
+                <span class="icon">📞</span>
+                <span class="input">+91-8929825255</span>
+
+            </div>
+
+            <div class="form-item">
+                <span class="icon">🌐</span>
+                <span class="input">https://thelyfex.com/</span>
+            </div>
+
+            <div class="form-item" style="background-color: #ce923e;">
+                <span class="icon">🏠</span>
+                <span class="input">D-57, 100 Feet Rd, Chhatarpur Hills, Pocket D, Chattarpur Enclave, Chhatarpur, New
+                    Delhi, Delhi 110074</span>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="enquiry-con">
+
+        <div class="enquiry-images">
+            <img class="hanging-icons" src="Assets/hangimg.png" alt="Hanging Icons">
+            <img class="triangle-pattern" src="Assets/tri-2.png" alt="Triangle Pattern">
+        </div>
+        <div class="enquiry-container">
+            <h1 class="head">Enquire Now</h1>
+            <!--<form class="enquiry-form" id="contact-form">-->
+            <!--    <input type="text" id="name" name="name" placeholder="Enter Name" required>-->
+
+            <!--    <input type="email" id="email" name="email" placeholder="Enter Email" required>-->
+            <!--     <div class="row">-->
+            <!--        <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number" required>-->
+
+            <!--        <select id="role" name="role" required>-->
+            <!--            <option value="">Select Role</option>-->
+            <!--            <option value="Student">Student</option>-->
+            <!--            <option value="School">School</option>-->
+            <!--            <option value="College">College</option>-->
+            <!--            <option value="Company">Company</option>-->
+            <!--            <option value="Mentor">Mentor</option>-->
+            <!--            <option value="Others">Others</option>-->
+            <!--        </select>-->
+            <!--     </div>-->
+                <!-- <input type="text" id="school" name="school" placeholder="Enter Institute/Company Name" required> -->
+
+            <!--    <input type="text" placeholder="Your Location" name="location" id="location" required>-->
+            <!--    <textarea placeholder="Your Message" name="message" id="message" required></textarea>-->
+            <!--    <button type="submit">Send Your Message</button>-->
+            <!--</form>-->
+            <form class="enquiry-form" id="contact-form" action="send_mail.php" method="POST">
+    <input type="text" id="name" name="name" placeholder="Enter Name" required>
+    <input type="email" id="email" name="email" placeholder="Enter Email" required>
+
+    <div class="row">
+        <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number" required>
+        <select id="role" name="role" required>
+            <option value="">Select Role</option>
+            <option value="Student">Student</option>
+            <option value="School">School</option>
+            <option value="College">College</option>
+            <option value="Company">Company</option>
+            <option value="Mentor">Mentor</option>
+            <option value="Others">Others</option>
+        </select>
+    </div>
+
+    <input type="text" placeholder="Your Location" name="location" id="location" required>
+    <textarea placeholder="Your Message" name="message" id="message" required></textarea>
+    <button type="submit">Send Your Message</button>
+</form>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Column 1: About LYFeX -->
+            <div class="footer-column" style="flex-basis: 24%;">
+                <h3>About LYFeX</h3>
+                <p>LYFeX (Live Your Future Experience) is an innovative program designed to empower students by
+                    providing them with early exposure to real-world careers and professional environments. By blending
+                    hands-on experiences, mentorship, and emotional
+                    development, LYFeX equips young minds to make informed career decisions and develop essential skills
+                    for future success.</p>
+                <!-- <a href="#about-us">About Us</a> -->
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="insurance.html">Programs</a><br>
+                <a href="#testimonals">Testimonals</a><br>
+                <a href="#blog">Blog</a><br>
+                <a href="#faqs">FAQs</a><br>
+                <a href="#privacy-policy">Privacy Policy</a>
+            </div>
+
+            <!-- Column 3: Contact Us -->
+            <div class="footer-column" style="flex-basis: 9%;">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:hi@thelyfex.com">hi@thelyfex.com</a></p>
+                <p>Phone: +91-XXX-XXX-XXXX</p>
+                <p>Address: D-57, 100 Feet Rd, Chhatarpur Hills, Pocket D, Chattarpur Enclave, Chhatarpur, New Delhi,
+                    Delhi 110074</p>
+            </div>
+
+            <!-- Column 4: Social Media & Subscribe -->
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-media-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61572591537307" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/thelyf_x/" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/thelyfex/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/@LYFeX4u" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <a href="#subscribe" class="cta-button">Subscribe to Newsletter</a>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom-bar">
+            <p>© 2024 LYFeX. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+  <!-- Login Form -->
+  <div id="loginForm" class="auth-form hidden">
+    <div class="auth-form-content">
+      <a href="#" class="back-button" id="backToMain">&#8592;</a>
+      <h1>WELCOME TO LYFeX!</h1>
+      <p class="subtitle">Hello there, sign in to continue!</p>
+
+      <form id="login">
+        <div class="form-group">
+          <label>Email address</label>
+          <div class="input-wrapper">
+            <input type="email" id="loginEmail" placeholder="xyz@gmail.com" required />
+            <span class="check-mark">✓</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="loginPassword" placeholder="******" required />
+            <button type="button" class="toggle-password">👁</button>
+          </div>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+        <div id="signInMessage" class="message"></div>
+        <button type="submit" class="btn-primary">LOGIN</button>
+      </form>
+
+      <div class="social-login">
+        <p>Or Login with</p>
+        <div class="social-buttons">
+          <button class="social-btn google-btn">
+            <img
+              src="Assets/google.png"
+              alt="Google"
+            />
+            Connect with Google
+          </button>
+          <button class="social-btn facebook-btn">
+            <img
+              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/facebook.svg"
+              alt="Facebook"
+            />
+            Connect with Facebook
+          </button>
+        </div>
+      </div>
+
+      <p class="switch-form">
+        Don't have an account? <a href="#" id="showRegister">Register!</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Register Form -->
+  <div id="registerForm" class="auth-form hidden">
+    <div class="auth-form-content">
+      <a href="#" class="back-button" id="backToMain2">&#8592;</a>
+      <h1>CREATE ACCOUNT</h1>
+      <p class="subtitle">Please enter your credentials to proceed</p>
+
+      <form id="register">
+        <div class="form-group">
+          <label>Full Name</label>
+          <div class="input-wrapper">
+            <input type="text" id="registerName" placeholder="Mokshita Bajpai" required />
+            <span class="check-mark">✓</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Phone</label>
+          <div class="input-wrapper">
+            <input type="tel" id="registerPhone" placeholder="828282***" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email address</label>
+          <div class="input-wrapper">
+            <input type="email" id="registerEmail" placeholder="xyz@gmail.com" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="registerPassword" required />
+            <button type="button" class="toggle-password">👁</button>
+          </div>
+        </div>
+        <div id="signUpMessage" class="message"></div>
+        <button type="submit" class="btn-primary">CREATE ACCOUNT</button>
+      </form>
+
+      <p class="switch-form">
+        Already have an account? <a href="#" id="showLogin">Login!</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Profile Sidebar -->
+  <div id="profileSidebar" class="sidebar">
+    <div class="sidebar-content">
+      <button id="closeSidebar" class="close-button">✖</button>
+      <h1>Profile</h1>
+      <p id="profileName"></p>
+      <p id="profileEmail"></p>
+      <button id="logoutBtn" class="btn-primary">Logout</button>
+    </div>
+  </div>
+</div>
+    <script src="../script.js"></script>
+    <script>
+
+        // const sendFormDetails = (details) => {
+        //     console.log("Sending form data:", details);
+
+        //     axios.post('https://thelyfex.com/contact', details, {
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         }
+        //     })
+        //         .then(response => {
+        //             console.log("Response received:", response);
+        //             alert("Form submitted successfully!");
+        //             window.location.href = "/contact.html";
+        //         })
+        //         .catch(error => {
+        //             console.error("Error submitting form:", error);
+        //             alert("Something went wrong. Please try again.");
+        //         });
+        // };
+
+        // document.querySelector('form').addEventListener('submit', function (e) {
+        //     e.preventDefault(); // Prevent default form submission
+
+        //     // Get form values
+        //     const name = document.getElementById('name').value.trim();
+        //     const email = document.getElementById('email').value.trim();
+        //     const phone = document.getElementById('phone').value.replace(/\D/g, '');
+        //     const role = document.getElementById('role').value;
+        //     const location = document.getElementById('location').value.trim();
+        //     const message = document.getElementById('message').value.trim();
+
+        //     // Validation checks
+        //     if (!name) {
+        //         alert('Please enter your name.');
+        //         return;
+        //     }
+
+        //     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        //         alert('Please enter a valid email address.');
+        //         return;
+        //     }
+
+        //     if (!/^\d{10}$/.test(phone)) {
+        //         alert('Please enter a valid 10-digit phone number.');
+        //         return;
+        //     }
+
+        //     if (!role) {
+        //         alert('Please select your role.');
+        //         return;
+        //     }
+
+        //     if (!location) {
+        //         alert('Please enter your location.');
+        //         return;
+        //     }
+        //     if (!message) {
+        //         alert('Please enter your message.');
+        //         return;
+        //     }
+
+        //     const obj = { name, email, phone, role, location, message };
+        //     sendFormDetails(obj);
+
+        // });
+
+//         (function(){
+//       emailjs.init("LqwVGahSIJ5W7XLYn"); // 👈 Tumhara API Public Key
+//   })();
+
+//   document.getElementById("contact-form").addEventListener("submit", function(event) {
+//       event.preventDefault();
+
+//       // Form se data uthana
+//       let formData = {
+//           to_name: "LYFeX Team", // Receiver ka naam (EmailJS template me use hoga)
+//           from_name: document.getElementById("name").value, // Sender ka naam
+//           message: `Email: ${document.getElementById("email").value}
+//                      Phone: ${document.getElementById("phone").value}
+//                      Role: ${document.getElementById("role").value}
+//                      Location: ${document.getElementById("location").value}
+//                      Message: ${document.getElementById("message").value}`
+//       };
+
+//       // EmailJS ko data bhejna
+//       emailjs.send("service_c4xrxaf", "template_x3vhndo", formData)
+//           .then(function(response) {
+//               alert("Form submitted successfully!");
+//               document.getElementById("contact-form").reset(); 
+//           }, function(error) {
+//               alert("Error: " + error);
+//           });
+//   });
+
+    </script>
+    <script type="module" src="main.js"></script>
+
+</body>
+
+</html>

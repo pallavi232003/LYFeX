@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LYFeX</title>
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NQJ9T6J3SX"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>-->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-NQJ9T6J3SX');
+</script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: linear-gradient(rgba(50, 49, 48, 0.76), rgba(61, 61, 59, 0.662)), url('Assets/edited_lyfex.png') no-repeat;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .close-btn {
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: #565151;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .close-btn:hover {
+        color: #dac151;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .container {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 450px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #333;
+    }
+
+    label {
+        font-size: 1rem;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    button {
+        background-color: #daca51;
+        color: #000000;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        padding: 0.7rem;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #c59f07;
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="header">
+                <h2>Join in</h2>
+                <a href="index.html" class="close-btn">&times;</a>
+            </div>
+            <!--<form id="contact-form">-->
+            <form id="longterm-form" action="send_mail.php" method="POST">
+    <input type="hidden" name="form_type" value="longterm-form">
+
+                <!-- Your existing form fields -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter Name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter Email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number" required>
+
+                <label for="role">Select Your Role:</label>
+                <select id="role" name="role" required>
+                    <option value="">Select Role</option>
+                    <option value="Student">Student</option>
+                    <option value="School">School</option>
+                    <option value="College">College</option>
+                    <option value="Company">Company</option>
+                    <option value="Mentor">Mentor</option>
+                    <option value="Others">Others</option>
+                </select>
+
+                <label for="school">Institute/Company Name:</label>
+                <input type="text" id="school" name="school" placeholder="Enter Institute/Company Name" required>
+
+
+                <label for="program">LYFeX Program:</label>
+                <input type="text" id="program" name="program" value="LTI with Mentor" disabled>
+
+                <!-- <label for="program">Choose Preferred LYFeX Program:</label>
+                <select id="program" name="program" required>
+                    <option value="">Select Program</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="Shadowing">Shadowing</option>
+                    <option value="LTI with Mentor">LTI with Mentor</option>
+                    <option value="Paid LTI">Paid LTI</option>
+                </select> -->
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="Enter Location" required>
+
+                <button type="submit">SUBMIT</button>
+            </form>
+        </div>
+
+        <script>
+
+// const sendFormDetails = (details) => {
+//     console.log("Sending form data:", details);
+
+//     axios.post('http://localhost:3000/submit', details, {
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//     })
+//     .then(response => {
+//         console.log("Response received:", response);
+//         alert("Form submitted successfully!");
+//         window.location.href = "/index.html"; 
+//     })
+//     .catch(error => {
+//         console.error("Error submitting form:", error);
+//         alert("Something went wrong. Please try again.");
+//     });
+// };
+
+// document.querySelector('form').addEventListener('submit', function (e) {
+//     e.preventDefault(); // Prevent default form submission
+
+//     // Get form values
+//     const name = document.getElementById('name').value.trim();
+//     const email = document.getElementById('email').value.trim();
+//     const phone = document.getElementById('phone').value.replace(/\D/g, '');
+//     const role = document.getElementById('role').value;
+//     const school = document.getElementById('school').value.trim();
+//     const program = document.getElementById('program').value;
+//     const location = document.getElementById('location').value.trim();
+
+//     // Validation checks
+//     if (!name) {
+//         alert('Please enter your name.');
+//         return;
+//     }
+
+//     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+//         alert('Please enter a valid email address.');
+//         return;
+//     }
+
+//     if (!/^\d{10}$/.test(phone)) {
+//         alert('Please enter a valid 10-digit phone number.');
+//         return;
+//     }
+
+//     if (!role) {
+//         alert('Please select your role.');
+//         return;
+//     }
+
+//     if (!school) {
+//         alert('Please enter your institute/company name.');
+//         return;
+//     }
+
+//     if (!program) {
+//         alert('Please choose a preferred program.');
+//         return;
+//     }
+
+//     if (!location) {
+//         alert('Please enter your location.');
+//         return;
+//     }
+
+//     const obj = { name, email, phone, role, school, program, location };
+//     sendFormDetails(obj);
+    
+// });
+
+// (function(){
+//       emailjs.init("LqwVGahSIJ5W7XLYn"); // 👈 Tumhara API Public Key
+//   })();
+
+//   document.getElementById("contact-form").addEventListener("submit", function(event) {
+//       event.preventDefault();
+
+//       // Form se data uthana
+//       let formData = {
+//           to_name: "LYFeX Team", // Receiver ka naam (EmailJS template me use hoga)
+//           from_name: document.getElementById("name").value, // Sender ka naam
+//           message: `Email: ${document.getElementById("email").value}
+//                      Phone: ${document.getElementById("phone").value}
+//                      Role: ${document.getElementById("role").value}
+//                      Institute/Company: ${document.getElementById("school").value}
+//                      Program: ${document.getElementById("program").value}
+//                      Location: ${document.getElementById("location").value}`
+//       };
+
+//       // EmailJS ko data bhejna
+//       emailjs.send("service_c4xrxaf", "template_x3vhndo", formData)
+//           .then(function(response) {
+//               alert("Form submitted successfully!");
+//               document.getElementById("contact-form").reset(); 
+//           }, function(error) {
+//               alert("Error: " + error);
+//           });
+//   });
+
+        </script>
+
+</body>
+
+</html>

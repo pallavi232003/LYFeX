@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LYFeX</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Job_Shadowing.css">
+
+
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NQJ9T6J3SX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NQJ9T6J3SX');
+</script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to bottom, rgb(241, 240, 237), rgb(240, 238, 214), rgb(238, 235, 191));
+        /* Gradient from white to soft yellow */
+        color: #000;
+    }
+    
+    .navbar {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #000000;
+        z-index: 10;
+        width: 100%;
+        height: 80px;
+        /* Fixed navbar height */
+    }
+    
+    .logo img {
+        height: 70px;
+        /* Set the height of the logo */
+        width: auto;
+        /* Maintain the aspect ratio */
+    }
+    
+    .nav-links {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-links li {
+        margin: 0 15px;
+    }
+    
+    .nav-links li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-links li a:hover {
+        color: #f0a500;
+    }
+    
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    
+    .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px 0;
+    }
+    /* Dropdown styling */
+    
+    .dropdown {
+        position: relative;
+    }
+    
+    .dropbtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    .arrow {
+        margin-left: 5px;
+        font-size: 12px;
+        transition: transform 0.3s ease;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        min-width: 160px;
+        z-index: 1000;
+        border-radius: 5px;
+        padding: 15px 0;
+    }
+    
+    .dropdown-content li {
+        padding: 10px 20px;
+        list-style: none;
+        white-space: nowrap;
+    }
+    
+    .dropdown-content li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+    
+    .dropdown-content.active {
+        display: flex;
+        /* Ensure proper stacking for responsive design */
+        flex-direction: column;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .dropdown-content li a:hover {
+        color: #f0a500;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown:hover .arrow {
+        transform: rotate(180deg);
+    }
+    /* Responsive adjustments */
+    
+    @media (max-width: 768px) {
+        .dropdown-content {
+            position: static;
+            background-color: #000;
+            box-shadow: none;
+            border-radius: 0;
+            width: 100%;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .nav-links {
+            position: absolute;
+            top: 70px;
+            /* Positioned below navbar */
+            right: 0;
+            background-color: #000;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            display: none;
+            padding: 10px 0;
+        }
+        .nav-links.active {
+            display: flex;
+        }
+        .nav-links li {
+            margin: 10px 0;
+        }
+        .hamburger {
+            display: flex;
+        }
+        .logo img {
+            height: 60px;
+        }
+    }
+    /* Main Section Styling */
+    
+    .main-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-image: url('shadowing.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 90vh;
+        padding: 40px;
+        color: white;
+    }
+    /* Main Title Styling */
+    
+    .main-title {
+        font-size: 40px;
+        font-family: 'Reckless', Georgia, sans-serif;
+        font-weight: bold;
+        color: white;
+        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+        margin-bottom: 30px;
+        margin-left: 19rem;
+    }
+    /* Welcome Board Styling */
+    
+    .welcome-board {
+        padding: 20px;
+        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+        border-radius: 8px;
+        width: 50%;
+        max-width: 560px;
+        text-align: left;
+        margin-top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .welcome-board h1,
+    .welcome-board h2 {
+        /* color: #dcdcdc; */
+        font-weight: bold;
+        margin-left: -6rem;
+    }
+    
+    .welcome-board h1 {
+        font-size: 32px;
+        line-height: 1.5;
+        margin-top: 30px;
+    }
+    
+    .welcome-board h2 {
+        font-size: 28px;
+        line-height: 1.5;
+        /* margin-bottom: 20px; */
+    }
+    
+    .pp {
+        margin-top: 20px;
+        font-size: 25px;
+        margin-left: -100px;
+    }
+    /* Button Container Styling */
+    
+    .button-container {
+        display: none;
+        /* Hidden by default */
+        flex-direction: row;
+        /* Buttons in a row */
+        justify-content: center;
+        gap: 30px;
+        margin: 40px 0;
+    }
+    /* Individual Button Styling */
+    
+    .button {
+        background-color: #f0a500;
+        text-decoration: none;
+        color: black;
+        padding: 16px;
+        border-radius: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        border-color: #000;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        min-width: 100px;
+        margin-top: 0px;
+    }
+    
+    .button:hover {
+        background-color: #d18b00;
+    }
+    /* Join Button Styling */
+    
+     .join-in {
+        background-color: #f0a500;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 20px;
+        cursor: pointer;
+         margin-right:390px;
+        margin-top: 290px;
+        transition: background-color 0.3s ease;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    .join-button:hover {
+        background-color: #c18c1a;
+    }
+    
+    .toggle-button-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .toggle-button-container button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .toggle-button-container button:hover {
+        background-color: #0056b3;
+    }
+    /* Responsive Design for Mobile Screens */
+    
+    @media (min-width:300px) and (max-width: 768px) {
+        .main-title {
+            display: none;
+        }
+        /* Adjust Welcome Board for Mobile */
+        .welcome-board {
+            width: 90%;
+            max-width: none;
+            padding: 10px;
+            text-align: center;
+            transform: none;
+            margin: 0px auto;
+            position: relative;
+            top: auto;
+            left: auto;
+        }
+        .welcome-board h1,
+        .welcome-board h2 {
+            /* font-size: 24px; */
+            margin: 10px 0;
+            text-align: center;
+            margin-left: 0;
+        }
+        .welcome-board h1 {
+            font-size: 32px;
+        }
+        .welcome-board h2 {
+            font-size: 26px;
+            white-space: nowrap;
+            margin-top: 50px;
+        }
+        .pp {
+            text-align: center;
+            margin: auto;
+        }
+         .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .toggle-button-container {
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .join-in {
+            padding: 12px 20px;
+            font-size: 16px;
+            margin-right: 390px;
+            margin-top: 250px;
+            width: 100%;
+            max-width: 200px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    
+    
+    @media (max-width: 1200px) {
+        .main-section {
+            padding: 20px;
+        }
+        .main-title {
+            font-size: 32px;
+        }
+        .welcome-board {
+            width: 70%;
+        }
+        .button-container {
+            gap: 15px;
+        }
+    }
+    
+    @media (max-width: 743px) {
+        .main-section {
+            background: url('2.png');
+            background-size: cover;
+        }
+        .welcome-board {
+            width: 100%;
+            padding: 10px;
+            margin-top: 60px;
+            /* margin: 0 auto; */
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+        .welcome-board h1 {
+            font-size: 32px;
+            white-space: nowrap;
+            margin: 120px -30px 20px 0;
+        }
+        .welcome-board h2 {
+            font-size: 24px;
+            margin-left: 20px;
+            align-items: center;
+        }
+        .welcome-board p {
+            font-size: 22px;
+            width: 100%;
+            font-weight: 600;
+            word-break: break-word;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .toggle-button-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 columns */
+            gap: 10px;
+            /* Space between buttons */
+        }
+        .join-in {
+            width: 120px;
+            font-size: 16px;
+            margin: 0;
+            position: relative;
+            top: 700px;
+        }
+        .button {
+            padding: 10px 15px;
+        }
+    }
+
+
+
+
+/* why LYFEX*/
+    
+    .section-container {
+        padding: 20px;
+    }
+    
+    .yh2 {
+        font-size: 38px;
+        margin-bottom: 30px;
+        justify-content: center;
+        color: #bd9118;
+        display: flex;
+    }
+    /* Info Boxes Container */
+    
+    .info-box-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    /* Info Box Styling */
+    
+    .info-box {
+        background: linear-gradient(135deg, rgb(244, 240, 198), rgb(237, 227, 124), rgb(244, 240, 198));
+        border-radius: 10px;
+       
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: rgb(119, 91, 0);
+        font-size: 25px;
+        font-weight: bold;
+        transition: transform 0.3s ease, height 0.3s ease, width 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    /* Info Box Content */
+    
+    .info-content {
+        position: absolute;
+        opacity: 0;
+        font-size: 16px;
+        padding: 35px;
+        transition: opacity 0.3s ease;
+        text-align: left;
+    }
+    
+    .info-box:hover .info-content {
+        opacity: 1;
+    }
+    
+    .info-title {
+        z-index: 1;
+        font-size: 20px;
+    }
+    /* Responsive Design */
+    
+    @media (max-width: 768px) {
+        .info-box {
+          
+            height: 170px;
+        }
+        .info-content {
+            font-size: 14px;
+        }
+        .info-title {
+        z-index: 1;
+        font-size: 14px;
+    }
+    }
+    
+    @media (max-width: 480px) {
+        .info-box {
+          
+            height: 160px;
+        }
+        .info-content {
+            font-size: 12px;
+        }
+        .info-title {
+        z-index: 1;
+        font-size: 13px;
+            padding: 30px 20px;
+            height: 180px;
+    }
+    }
+
+
+
+
+    
+    /* how js works*/
+    
+    .jsworkcontainer {
+        width: 100%;
+        margin: auto;
+    }
+    
+    .jswork {
+        border-right: 4px solid #f3af12;
+        width: 340px;
+        height: 260px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 30px 10px 30px 10px;
+        margin: 50px 15px 30px 15px;
+        overflow: hidden;
+        position: relative;
+        background: #f4f2ec;
+        border-radius: 10px;
+    }
+    
+    .jswork:before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: -17px;
+        border-top: 25px solid #f3af12;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        transform: rotate(45deg);
+    }
+    
+    .jswork:after {
+        content: "";
+        position: absolute;
+        top: -4px;
+        left: -17px;
+        border-top: 25px solid #f3af12;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        transform: rotate(135deg);
+    }
+    /*.jswork .pic {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: absolute;
+        top: 60px;
+        left: 20px;
+    }
+    
+    .jswork .pic img {
+        width: 100%;
+        height: auto;
+    }*/
+    
+    .jswork .description {
+        font-size: 17px;
+        color: black;
+        line-height: 25px;
+        margin: 15px;
+        white-space: wrap;
+    }
+    
+    .jswork .title {
+        font-size: 23px;
+        font-family: Arial, Helvetica;
+        font-weight: 790;
+        text-align: center;
+        color: #000000;
+        margin-top: -10px;
+    }
+    
+    .jswork .post {
+        display: inline-block;
+        font-size: 17px;
+        color: #d1af29;
+        font-style: italic;
+    }
+    
+    .owl-theme .owl-controls .owl-page span {
+        border: 2px solid #a2982a;
+        background: #fff !important;
+        border-radius: 50px !important;
+        opacity: 1;
+    }
+    
+    .owl-theme .owl-controls .owl-page.active span,
+    .owl-theme .owl-controls .owl-page:hover span {
+        background: #d6ad1a !important;
+        border-color: #dbc415;
+    }
+    
+    @media only screen and (max-width: 767px) {
+        .jswork {
+            padding: 20px;
+            text-align: center;
+        }
+        .jswork .pic {
+            display: block;
+            position: static;
+            margin: 0 auto 15px;
+        }
+        .owl-item {
+            width: 500px !important;
+        }
+        .jswork .title {
+            margin-top: 0px;
+        }
+    }
+    /* lyfex jscompanies css */
+    
+    .jscompanies_container {
+        text-align: center;
+        padding: 40px;
+        background: linear-gradient(to bottom, #f1ecdc, #f0e5c0, #f4dc91);
+    }
+    
+    .jscompaniestitle {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #4f2f83;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        border: 2px solid #4f2f83;
+        display: inline-block;
+        padding: 10px 30px;
+        border-radius: 5px;
+    }
+    
+    .jscompanies {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    .jscompaniescard {
+        width: 269px;
+        height: 296px;
+        background-color: #383737;
+        border-radius: 41px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 2px;
+        border-color: black;
+        transition: transform 0.3s;
+    }
+    
+    .jscompaniescard img {
+        width: 264px;
+        height: 235px;
+        object-fit: cover;
+        border-radius: 39px;
+    }
+    
+    .jscompaniescard-content {
+        padding: 15px 0;
+    }
+    
+    .jscompaniescard-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+    
+    .jscompaniesphase {
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: #8d703b;
+        margin: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .jscompaniesdescription {
+        font-size: 1.2rem;
+        line-height: 1.2;
+        color: #333;
+        padding-left: 10px;
+    }
+    
+    .jscompaniescard:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    /*js students css*/
+    
+    .jsstud {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .jsstudentscontainer {
+        width: 80%;
+        border-radius: 8px;
+        left: 40%;
+        overflow: hidden;
+        text-align: center;
+    }
+    
+    .jsstudentsgrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        height: auto;
+        /* Adjusted to accommodate dynamic height for smaller screens */
+        border: 2px solid #f1e4b3;
+    }
+    
+    .jsstudentsbox {
+        padding: 40px;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        text-align: left;
+        color: #4a4a4a;
+    }
+    
+    .jsstudentstitle {
+        font-weight: bold;
+        margin-bottom: 12px;
+        font-size: 1.4rem;
+    }
+    
+    .bannerr {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #e2cb71;
+        border: 2px solid #c38022;
+        color: #0d1d5f;
+        text-shadow: 8px #000000;
+        font-weight: bold;
+        font-size: 26px;
+        padding: 15px;
+        margin: 30px auto;
+        width: fit-content;
+        border-radius: 5px;
+        text-transform: uppercase;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    /* Responsive Styles */
+    
+    @media (max-width: 768px) {
+        .jsstudentsgrid {
+            grid-template-columns: repeat(2, 1fr);
+            /* Change to single column on smaller screens */
+            gap: 10px;
+            /* Add some spacing between items */
+        }
+        .jsstudentsbox {
+            padding: 20px;
+            /* Reduce padding for smaller screens */
+            font-size: 1rem;
+            /* Adjust font size for readability */
+        }
+        .jsstudentscontainer {
+            width: 90%;
+            /* Adjust container width for smaller screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .bannerr {
+            font-size: 20px;
+            /* Adjust banner font size for very small screens */
+            padding: 10px;
+            margin: 20px 10px;
+            /* Reduce padding for the banner */
+        }
+        
+    }
+    /* y lyfex css*/
+    
+    .ylcontainer {
+        text-align: center;
+        padding: 20px;
+        /* height: 700px; */
+        background: linear-gradient(to bottom, #f1ecdc, #f0e5c0, #f4dc91);
+    }
+    
+    .yltitle {
+        font-size: 2rem;
+        color: #4f2f83;
+        /* Matches "Why LYFeX" text color */
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background-color: #f3e7cb;
+        /* Matches the background of the title box */
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+    
+    .ylcard-container {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        flex-wrap: wrap;
+        height: 520px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    /* Scrollbar Styling for Webkit Browsers */
+    
+    .ylcard-container::-webkit-scrollbar {
+        width: 10px;
+        /* Width of the scrollbar */
+    }
+    /* Scrollbar Track */
+    
+    .ylcard-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        /* Background color of the scrollbar track */
+        border-radius: 5px;
+        /* Rounded corners for the track */
+    }
+    
+    .ylcard-container::-webkit-scrollbar-thumb {
+        background: #888;
+        /* Color of the scrollbar thumb */
+        border-radius: 5px;
+        /* Rounded corners for the thumb */
+    }
+    
+    .ylcard-container {
+        scrollbar-width: thin;
+        /* Narrow scrollbar */
+        scrollbar-color: #888 #f1f1f1;
+        /* Thumb color, track color */
+    }
+    
+    .ylcard {
+        width: 360px;
+        height: 440px;
+        background: linear-gradient(to bottom, rgb(255, 191, 0), rgb(231, 206, 133), rgb(244, 232, 197));
+        border-radius: 45px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    
+    .ylcard:hover {
+        transform: translateY(-10px);
+    }
+    
+    .ylcard p {
+        font-size: 1.1rem;
+        line-height: 1.2;
+        color: #151515;
+        padding: 0px 34px;
+    }
+    
+    .ylcard-image {
+        width: 368px;
+        height: 228px !important;
+        object-fit: cover;
+    }
+    
+    .ylcard h2 {
+        color: #000;
+        font-size: 1.4rem;
+        padding: 10px;
+        padding-bottom: 20px;
+        margin: 0;
+    }
+    
+    .banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffe064;
+        border: 2px solid #c38022;
+        color: #0d1d5f;
+        text-shadow: 8px #000000;
+        font-weight: bold;
+        font-size: 26px;
+        padding: 15px;
+        margin: 80px auto;
+        margin-bottom: 100px;
+        width: fit-content;
+        border-radius: 5px;
+        text-transform: uppercase;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+
+
+/*cta css*/
+     /*cta container*/
+    
+    .cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    .ctacontainer {
+        padding: 40px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(to bottom, #fff59d, #ffe082);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 50px auto;
+        width: 1200px;
+        height: 350px;
+    }
+    
+    .ctatext-section {
+        max-width: 50%;
+    }
+    
+    .ctatext-section h1,
+    .ctatext-section p {
+        color: #000;
+        margin-bottom: 10px;
+    }
+    
+    .ctatext-section h1 {
+        font-size: 32px;
+        font-weight: bold;
+    }
+    
+    .ctatext-section p {
+        font-size: 18px;
+    }
+    
+    .ctajoin-button {
+        margin-top: 20px;
+        display: inline-block;
+        background-color: #ffca28;
+        color: #000;
+        font-weight: bold;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    
+    .ctajoin-button:hover {
+        background-color: #ffc107;
+    }
+    
+    .ctaimage-section {
+        width: 40%;
+        height: 100%;
+        background-color: #d3d3d3;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: #555;
+        font-weight: bold;
+    }
+    .ctaimage-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the section without distortion */
+}
+    
+    @media (max-width: 780px) {
+        .cta {
+            padding: 20px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .ctatext-section h1 {
+            font-size: 20px;
+        }
+        .ctatext-section p {
+            font-size: 14px;
+        }
+        .ctajoin-button {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+        .ctaimage-section {
+            height: 150px;
+        }
+    }
+
+    
+
+    
+    /* footer css */
+    
+    footer {
+        background-color: black;
+        color: white;
+        padding: 40px 20px;
+        font-family: Arial, sans-serif;
+    }
+    
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    
+    .footer-column {
+        flex: 1;
+        min-width: 200px;
+    }
+    
+    .footer-column h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        color: #f0a500;
+    }
+    
+    .footer-column p,
+    .footer-column a {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #dcdcdc;
+        text-decoration: none;
+    }
+    
+    .footer-column a:hover {
+        color: #eba037;
+    }
+    
+    .social-media-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+    
+    .social-media-icons a {
+        font-size: 20px;
+        color: #dcdcdc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .social-media-icons a:hover {
+        color: #eba037;
+    }
+    
+    .footer-bottom-bar {
+        text-align: center;
+        margin-top: 30px;
+        border-top: 1px solid #444;
+        padding-top: 10px;
+    }
+    
+    .cta-button {
+        background-color: #f0a500;
+        color: black !important;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 10px !important;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    
+    .cta-button:hover {
+        background-color: #e58600;
+    }
+    
+    @media (max-width: 768px) {
+        .footer-container {
+            align-items: flex-start;
+        }
+        .footer-column {
+            margin-bottom: 20px;
+        }
+    }
+    
+    .combenifitscontainer {
+        width: 80%;
+        margin: 30px auto;
+    }
+    
+    .combenifits {
+        width: 290px;
+        height: 300px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+        margin: 50px 15px 30px 15px;
+        overflow: hidden;
+        position: relative;
+        background: #c1a00f;
+        border-radius: 50px;
+    }
+    
+    .combenifits-image {
+        max-width: 100%;
+        width: 250px !important;
+        height: 320px;
+        /* Adjust height as needed */
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    #img1 {
+        width: 250px;
+        height: 250px;
+        /* margin: 20px; */
+    }
+    
+    .combenifits .description {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        /* Ensure consistent height for all containers */
+    }
+    
+    .combenifits .title {
+        font-size: 22px;
+        margin-top: 40px !important;
+        font-family: Arial, Helvetica;
+        font-weight: 700;
+        padding-bottom: 10px;
+        text-align: center;
+        color: #ffffff;
+        margin: 0;
+    }
+    
+    .combenifits .post {
+        display: inline-block;
+        font-size: 17px;
+        color: #d1af29;
+        font-style: italic;
+    }
+    
+    .owl-theme .owl-controls .owl-page span {
+        border: 2px solid #a2982a;
+        background: #fff !important;
+        border-radius: 50px !important;
+        opacity: 1;
+    }
+    
+    .owl-theme .owl-controls .owl-page.active span,
+    .owl-theme .owl-controls .owl-page:hover span {
+        background: #d6ad1a !important;
+        border-color: #dbc415;
+    }
+    
+    @media only screen and (max-width: 767px) {
+        .combenifits {
+            padding: 20px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            margin: auto 30px;
+        }
+        .combenifits .pic {
+            display: block;
+            position: static;
+            margin: 0 auto 15px;
+        }
+    }
+</style>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="Logo.png" alt="LYFeX Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">
+                    Programs <span class="arrow">&#9662;</span>
+                </a>
+                <ul class="dropdown-content">
+                     <li><a href="insurance.html">Insurance</a></li>
+                    <li><a href="Job_Shadowing.html">Shadowing</a></li>
+                    <li><a href="longterm.html">Long Term Internship</a></li>
+                   
+                </ul>
+            </li>
+            <li><a href="Mentors">Mentors</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li class="mentor-btn"><a href="mentorform.html" id="join" style="color: rgb(223, 130, 0);">Join as Mentor</a></li>
+
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <script>
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const dropdownToggles = document.querySelectorAll('.dropbtn');
+
+            // Toggle the mobile menu
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Toggle the dropdown menu on click
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent the default link behavior
+                    const dropdownContent = toggle.nextElementSibling; // Get the dropdown content
+                    dropdownContent.classList.toggle('active'); // Toggle visibility of the dropdown
+
+                    // Close other dropdowns (optional, for better UX)
+                    dropdownToggles.forEach(otherToggle => {
+                        if (otherToggle !== toggle) {
+                            const otherDropdown = otherToggle.nextElementSibling;
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        </script>
+    </nav>
+
+
+
+    <section class="main-section">
+       <!--<h1 class="main-title">Observation is the 🔑</h1>
+
+        <div class="welcome-board">
+            <h1>Welcome to LYFeX</h1> --
+            <h2>Shadowing Program</h2>
+            <p class="pp">Experience the Best to Learn the Best</p>
+           <p class="pp">Join LYFeX today and let children see a brighter tomorrow!</p> -->
+
+            <!-- <button class="join-in" onclick="toggleButtonContainer()">Join In</button> -->
+
+            <button class="join-in"><a href="Job_Shandowing_form.html" class="">Join In</a></button>
+
+        </div>
+
+        <!-- <div class="toggle-button-container" id="button-container" style="display: none;">
+            <a href="school form.html" class="button">Schools</a>
+            <a href="college form.html" class="button">Colleges</a>
+            <a href="companyform.html" class="button">Companies</a>
+            <a href="mentorform.html" class="button">Mentors</a>
+        </div> -->
+    </section>
+
+    <script>
+        function toggleButtonContainer() {
+            const container = document.querySelector('.toggle-button-container');
+            if (container.style.display === 'none') {
+                container.style.display = 'flex';
+            } else {
+                container.style.display = 'none';
+            }
+        }
+    </script>
+
+
+
+    
+
+     <section id="how-lyfex-works" style="text-align: center;">
+         
+        <div class="info-box-container">
+            <div class="info-box" id="mission">
+                <div class="info-title"> 
+                    The LYFeX Job Shadowing Program offers an observation-based learning experience to help students explore various career paths.
+                     The program is focused on developing cognitive skills and helping students gain clarity about their future career choices. 
+                    It encourages self-learning, allowing students to uncover their true interests and make informed decisions regarding their career direction. 
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+
+
+    <div class="bannerr">How LYFeX Shadowing Works</div>
+    <div class="jsworkcontainer">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="jswork-slider" class="owl-carousel">
+
+                    
+                   <div class="jswork">
+                        <h3 class="title">Understanding Interests</h3>
+                        <p class="description">
+                           The <b>LYFeX team</b> meets with students to understand their interests, strengths, and aspirations through one-on-one or group discussions.
+                        </p>
+                    </div>
+
+                    <div class="jswork">
+                        <h3 class="title">Expert Matchmaking</h3>
+                        <p class="description">
+                            Based on the insights gathered, students are paired with <b>professionals (mentors)</b> in relevant fields for the shadowing experience.
+                        </p>
+                    </div>
+
+                    <div class="jswork">
+                        <h3 class="title">⁠Orientation Program <br>(2 Days)</h3>
+                        <p class="description">
+                           An introductory orientation prepares students by explaining expectations, behavioral standards, and the shadowing process—emphasizing <b>observation, self-driven learning,</b> and <b>reflection</b>.
+
+                        </p>
+                    </div>
+
+                    <div class="jswork">
+                        <h3 class="title">Shadowing Program <br>(3 Months)</h3>
+                        <p class="description">
+                          Students engage in <b>observation-based learning</b>, spending time with mentors, and observing daily activities, decision-making processes, and workflows in real-world settings.
+                        </p>
+                    </div>
+
+                    <div class="jswork">
+                        <h3 class="title">⁠Self-Learning Focus</h3>
+                        <p class="description">
+                           Mentors guide the students through observation, not direct teaching. The program is built on <b>self-learning</b>, where students analyze and reflect on what they observe, ask questions, and seek clarifications to deepen their understanding. </p>
+                    </div>
+
+                    <div class="jswork">
+                        <h3 class="title"> Post- Program Reflection</h3>
+                        <p class="description">
+                            At the end of the 3 months, students reflect on whether the field and mentor align with their interests.<br>
+                            If<b> yes</b>, the program continues for another quarter.<br>
+                            If<b> no</b>, students can explore a different field or mentor in the next cycle.
+                        </p>
+                    </div>
+
+                    <div class="jswork">
+                        <h3 class="title">Continuation</h3>
+                        <p class="description">
+                            Students can continue the shadowing program until they find their passion and an ideal mentor.
+                        </p>
+                    </div>
+
+                    <div class="jswork">
+                        <h3 class="title">Reporting</h3>
+                        <p class="description">
+                            LYFeX provides a <b>detailed report</b> to students, parents, and schools, outlining progress and key observations.
+                        </p>
+                    </div>
+
+                    <div class="jswork">
+                        <h3 class="title">Behavioral Analysis</h3>
+                        <p class="description">
+                            Instead of grades, a <b>behavioral analysis report</b> is shared, focusing on:<br> <b>Cognitive development</b><br> <b>Engagement and initiative</b><br> <b>Problem-solving and adaptability</b>
+                        </p>
+                    </div>
+
+                    <div class="jswork">
+                        <h3 class="title">Certificate</h3>
+                        <p class="description">
+                           At the end of the program, a <b>yearly certificate</b> is awarded, summarizing the student’s participation, achievements, and skills developed during the program
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#jswork-slider").owlCarousel({
+                items: 3,
+                itemsDesktop: [1200,2],
+                itemsDesktopSmall: [990, 2],
+                itemsTablet: [440, 2],
+                pagination: true,
+                navigation: false,
+                navigationText: ["", ""],
+                slideSpeed: 1000,
+                //autoPlay: true
+            });
+        });
+    </script>
+
+
+
+    <div class="bannerr">Shadowing for Students </div>
+    <div class="jsstud">
+        <div class="jsstudentscontainer">
+
+            <div class="jsstudentsgrid">
+                <div class="jsstudentsbox" style="background-color: #f7f0e6;">
+                    <div class="jsstudentstitle">Career clarity</div>
+                    Students gain first-hand exposure to various professions, helping them make informed decisions about their career interests and goals.
+                </div>
+                
+                <div class="jsstudentsbox" style="background-color: #ffe76d;">
+                    <div class="jsstudentstitle">Real-World Experience</div>
+                   Through observation, students learn about real-life workflows, decision-making processes, and daily responsibilities, thus developing a deeper understanding of the profession. 
+                </div>
+                
+                <div class="jsstudentsbox" style="background-color: #ffe76d;">
+                    <div class="jsstudentstitle">Development of Cognitive Skills</div>
+                    Observing professionals in action encourages students to think critically, analyze situations, and develop problem-solving abilities in a real-world context.
+                </div>
+                
+                <div class="jsstudentsbox" style="background-color: #f7f0e6;">
+                    <div class="jsstudentstitle">Increased Confidence</div>
+                     Engaging with professionals and actively participating in the learning process boosts students’ confidence, preparing them for future challenges in their chosen careers.
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+   <div class="ylcontainer">
+        <div class="bannerr">School Benefits from Shadowing</div>
+        <div class="ylcard-container">
+            <!-- School Card -->
+            <div class="ylcard">
+                <img src="Enhanced student engagement.jpg" alt="School Image" class="ylcard-image">
+                <h2>Enhanced Student Engagement</h2>
+                <p>Provide students with unique, hands-on learning experiences that increase their interest and motivation in academics and career planning.</p>
+            </div>
+            <!-- Colleges Card -->
+            <div class="ylcard">
+                <img src="Career Readiness program.jpg" alt="College Image" class="ylcard-image">
+                <h2>Career Readiness Program</h2>
+                <p>Equip students with practical knowledge and skills, preparing them for the challenges of higher education and professional life.</p>
+            </div>
+            <!-- Companies Card -->
+            <div class="ylcard">
+                <img src="Holistic development.jpg" alt="Company Image" class="ylcard-image">
+                <h2>Holistic Development</h2>
+                <p> Encourage emotional and social growth among students by exposing them to real-world environments and challenges.</p>
+            </div>
+
+            <div class="ylcard">
+                <img src="Strengthened school reputation.jpg" alt="Company Image" class="ylcard-image">
+                <h2>Strengthened School Reputation</h2>
+                <p>Stand out as a forward-thinking institution offering innovative programs that prepare students for success.</p>
+            </div>
+
+            <div class="ylcard">
+                <img src="Valuable partnership.jpg" alt="Company Image" class="ylcard-image">
+                <h2>Valuable Partnerships</h2>
+                <p>Collaborate with industry professionals and organizations to provide enriched learning opportunities for students.</p>
+            </div>
+
+            <div class="ylcard">
+                <img src="Parents Satisfaction.jpg" alt="Company Image" class="ylcard-image">
+                <h2>Parent Satisfaction</h2>
+                <p> Build trust and satisfaction among parents by demonstrating a commitment to their child’s future and providing career clarity early on.</p>
+            </div>
+
+           <!-- <div class="ylcard">
+                <img src="Customized curriculum support.jpg" alt="Company Image" class="ylcard-image">
+                <h2>Customized Curriculum Support</h2>
+                <p> Complement traditional education with experiential learning opportunities that bridge the gap between academics and the industry.</p>
+            </div>
+
+            <div class="ylcard">
+                <img src="Leadership opportunities for students.jpg" alt="Company Image" class="ylcard-image">
+                <h2>Leadership Opportunities for Students</h2>
+                <p>Help students develop leadership skills through interaction with professionals and exposure to workplace dynamics.</p>
+            </div>
+
+            <div class="ylcard">
+                <img src="Alumini success stories.jpg" alt="Company Image" class="ylcard-image">
+                <h2>Alumni Success Stories</h2>
+                <p> Cultivate future-ready students who will credit the school for playing a key role in shaping their successful careers.</p>
+            </div>-->
+
+
+        </div>
+        <br>
+        <br>
+    </div>
+
+
+    <div class="bannerr">Shadowing For Companies</div>
+    <div class="combenifitscontainer">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="combenifits-slider" class="owl-carousel">
+                    <div class="combenifits">
+                        <div class="description">
+                            <img src="On demand resources.jpg" alt="School Image" id="img1"> </div>
+                        <h3 class="title">On-Demand Resources</h3>
+
+
+                    </div>
+
+                    <div class="combenifits">
+                        <div class="description">
+                            <img src="Long term resources availblity.jpg" alt="School Image" class="combenifits-image"> </div>
+                        <h3 class="title">Long Term Resource Availability</h3>
+
+                    </div>
+
+                    <div class="combenifits">
+                        <div class="description">
+                            <img src="minimal commitment.jpg" alt="School Image" class="combenifits-image">
+                        </div>
+                        <h3 class="title">Minimal Commitment</h3>
+
+                    </div>
+
+                    <div class="combenifits">
+                        <div class="description">
+                            <img src="Fresh perspectives.jpg" alt="School Image" class="combenifits-image">
+                        </div>
+                        <h3 class="title">Fresh Perspectives</h3>
+
+                    </div>
+
+                    <div class="combenifits">
+                        <div class="description">
+                            <img src=" cost efficiency.jpg" alt="School Image" class="combenifits-image">
+                        </div>
+                        <h3 class="title">Cost-Efficiency</h3>
+
+                    </div>
+
+                    <div class="combenifits">
+                        <div class="description">
+                            <img src="Talent pipeline development.jpg" alt="School Image" id="img1">
+                        </div>
+                        <h3 class="title">Talent Pipeline Development</h3>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#combenifits-slider").owlCarousel({
+                items: 3,
+                itemsDesktop: [1000, 3],
+                itemsDesktopSmall: [990, 2],
+                itemsTablet: [768, 1],
+                pagination: true,
+                navigation: false,
+                navigationText: ["", ""],
+                slideSpeed: 1000,
+                //autoPlay: true
+            });
+        });
+    </script>
+
+
+ <div class="cta">
+        <div class="ctacontainer">
+            <div class="ctatext-section">
+                <h1>Early Clarity and Skilling leads to better future.</h1>
+                <p>Join LYFeX today and help children see a brighter tomorrow!</p>
+                <a href="contact.html" class="ctajoin-button">Join Us</a>
+            </div>
+            <div class="ctaimage-section">
+                <img src="https://media.istockphoto.com/id/1151224020/photo/teacher-with-preschoolers-finger-painting-at-class.jpg?s=612x612&w=0&k=20&c=oJeFNYCargky4W52WM10BrEZJ-IsvrEB6ted--3-42I=" alt="LYFeX Program">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <footer>
+        <div class="footer-container">
+            <!-- Column 1: About LYFeX -->
+            <div class="footer-column" style="flex-basis: 24%;">
+                <h3>About LYFeX</h3>
+                <p>LYFeX (Live Your Future Experience) is an innovative program designed to empower students by providing them with early exposure to real-world careers and professional environments. By blending hands-on experiences, mentorship, and emotional
+                    development, LYFeX equips young minds to make informed career decisions and develop essential skills for future success.</p>
+               
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-column" style="padding-left:0px ;">
+                <h3>Quick Links</h3>
+                <a href="insurance.html">Programs</a><br>
+                <a href="#testimonals">Testimonals</a><br>
+                <a href="#blog">Blog</a><br>
+                <a href="#faqs">FAQs</a><br>
+                <a href="#privacy-policy">Privacy Policy</a>
+            </div>
+
+            <!-- Column 3: Contact Us -->
+            <div class="footer-column" style="flex-basis: 9%;">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:hi@thelyfex.com">hi@thelyfex.com</a></p>
+                <p>Phone: +91-XXX-XXX-XXXX</p>
+                <p>Address: D-57, 100 Feet Rd, Chhatarpur Hills, Pocket D, Chattarpur Enclave, Chhatarpur, New Delhi, Delhi 110074</p>
+            </div>
+
+            <!-- Column 4: Social Media & Subscribe -->
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-media-icons">
+                    <a href="#facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <a href="#subscribe" class="cta-button">Subscribe to Newsletter</a>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom-bar">
+            <p>© 2024 LYFeX. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const joinButton = document.getElementById("join-button");
+            const buttonContainer = document.getElementById("button-container");
+
+            joinButton.addEventListener("click", function() {
+                // Toggle the display of the button container
+                if (buttonContainer.style.display === "none" || buttonContainer.style.display === "") {
+                    buttonContainer.style.display = "flex";
+                } else {
+                    buttonContainer.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+   
+
+</body>
+
+</html>

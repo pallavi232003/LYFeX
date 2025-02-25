@@ -1,0 +1,2397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadowing</title>
+    <link rel="stylesheet" href="NEW.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Job_Shadowing.css">
+
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NQJ9T6J3SX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-NQJ9T6J3SX');
+</script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to bottom, rgb(241, 240, 237), rgb(240, 238, 214), rgb(238, 235, 191));
+        /* Gradient from white to soft yellow */
+        color: #000;
+    }
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #000000;
+        z-index: 10;
+        width: 100%;
+        height: 80px;
+        /* Fixed navbar height */
+    }
+
+    .logo img {
+        height: 70px;
+        /* Set the height of the logo */
+        width: auto;
+        /* Maintain the aspect ratio */
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links li {
+        margin: 0 15px;
+    }
+
+    .nav-links li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+        color: #f0a500;
+    }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px 0;
+    }
+
+    /* Dropdown styling */
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropbtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .arrow {
+        margin-left: 5px;
+        font-size: 20px;
+        transition: transform 0.3s ease;
+        color: #c18c1a;
+        height: 20px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        min-width: 160px;
+        z-index: 1000;
+        border-radius: 5px;
+        padding: 15px 0;
+    }
+
+    .dropdown-content li {
+        padding: 10px 20px;
+        list-style: none;
+        white-space: nowrap;
+    }
+
+    .dropdown-content li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .dropdown-content.active {
+        display: flex;
+        /* Ensure proper stacking for responsive design */
+        flex-direction: column;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .dropdown-content li a:hover {
+        color: #f0a500;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .arrow {
+        transform: rotate(180deg);
+    }
+
+    /* Responsive adjustments */
+
+    @media (max-width: 768px) {
+        .dropdown-content {
+            position: static;
+            background-color: #000;
+            box-shadow: none;
+            border-radius: 0;
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 1100px) {
+        .nav-links {
+            position: absolute;
+            top: 70px;
+            /* Positioned below navbar */
+            right: 0;
+            background-color: #000;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            display: none;
+            padding: 10px 0;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 10px 0;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+
+        .logo img {
+            height: 60px;
+        }
+    }
+
+    /* Main Section Styling */
+
+    .main-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-image: url('Assets/shadowing.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 90vh;
+        padding: 40px;
+        color: white;
+    }
+
+    /* Main Title Styling */
+
+    .main-title {
+        font-size: 40px;
+        font-family: 'Reckless', Georgia, sans-serif;
+        font-weight: bold;
+        color: white;
+        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+        margin-bottom: 30px;
+        margin-left: 19rem;
+    }
+
+    /* Welcome Board Styling */
+
+    .welcome-board {
+        padding: 20px;
+        text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+        border-radius: 8px;
+        width: 50%;
+        max-width: 560px;
+        text-align: left;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .welcome-board h1,
+    .welcome-board h2 {
+        /* color: #dcdcdc; */
+        font-weight: bold;
+        margin-left: -6rem;
+    }
+
+    .welcome-board h1 {
+        font-size: 32px;
+        line-height: 1.5;
+        margin-top: 30px;
+    }
+
+    .welcome-board h2 {
+        font-size: 28px;
+        line-height: 1.5;
+        /* margin-bottom: 20px; */
+    }
+
+    .pp {
+        margin-top: 20px;
+        font-size: 25px;
+        margin-left: -100px;
+    }
+
+    /* Button Container Styling */
+
+    .button-container {
+        display: none;
+        /* Hidden by default */
+        flex-direction: row;
+        /* Buttons in a row */
+        justify-content: center;
+        gap: 30px;
+        margin: 40px 0;
+    }
+
+    /* Button Container Styling */
+
+    .button-container {
+        display: none;
+        /* Hidden by default */
+        flex-direction: row;
+        /* Buttons in a row */
+        justify-content: center;
+        gap: 30px;
+        margin: 50px 0;
+    }
+
+    /* Individual Button Styling */
+
+    .button {
+        background-color: #f0a500;
+        text-decoration: none;
+        color: black;
+        padding: 13px 16px;
+        border-radius: 35px;
+        font-size: 18px;
+        font-weight: bold;
+        border-color: #000;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        min-width: 100px;
+        margin-top: 20px;
+    }
+
+    .button:hover {
+        background-color: #d18b00;
+    }
+
+    /* Join Button Styling */
+
+    .join-in {
+        background-color: #f0a500;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-right:350px;
+        margin-top: 290px;
+        transition: background-color 0.3s ease;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .join-button:hover {
+        background-color: #c18c1a;
+    }
+
+    .toggle-button-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .toggle-button-container button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .toggle-button-container button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Individual Button Styling */
+
+    .button {
+        background-color: #f0a500;
+        text-decoration: none;
+        color: black;
+        padding: 16px;
+        border-radius: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        border-color: #000;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        min-width: 100px;
+        margin-top: 0px;
+    }
+
+    .button:hover {
+        background-color: #d18b00;
+    }
+
+    /* Join Button Styling */
+
+    #join-button {
+        background-color: #f0a500;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-left: 18rem;
+        margin-top: 30px;
+        transition: background-color 0.3s ease;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    #join-button:hover {
+        background-color: #c18c1a;
+    }
+
+    /* Responsive Design for Mobile Screens */
+
+    @media (min-width:300px) and (max-width: 768px) {
+        .main-title {
+            display: none;
+        }
+
+        /* Adjust Welcome Board for Mobile */
+        .welcome-board {
+            width: 90%;
+            max-width: none;
+            padding: 10px;
+            text-align: center;
+            transform: none;
+            margin: 0px auto;
+            position: relative;
+            top: auto;
+            left: auto;
+        }
+
+        .welcome-board h1,
+        .welcome-board h2 {
+            /* font-size: 24px; */
+            margin: 10px 0;
+            text-align: center;
+            margin-left: 0;
+        }
+
+        .welcome-board h1 {
+            font-size: 32px;
+        }
+
+        .welcome-board h2 {
+            font-size: 26px;
+            white-space: nowrap;
+            margin-top: 50px;
+        }
+
+        .pp {
+            text-align: center;
+            margin: auto;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        #join-in {
+            padding: 12px 20px;
+            font-size: 16px;
+            margin-top: 250px;
+            width: 100%;
+            max-width: 200px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .main-section {
+            padding: 20px;
+        }
+
+        .main-title {
+            font-size: 32px;
+        }
+
+        .welcome-board {
+            width: 70%;
+        }
+
+        .button-container {
+            gap: 15px;
+        }
+    }
+
+    @media (max-width: 743px) {
+        .main-section {
+            background: url('Assets/2.png');
+            background-size: 100% 99%;
+        }
+
+        .welcome-board {
+            width: 100%;
+            padding: 10px;
+            margin-top: 60px;
+            /* margin: 0 auto; */
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .welcome-board h1 {
+            font-size: 32px;
+            white-space: nowrap;
+            margin: 120px -30px 20px 0;
+        }
+
+        .welcome-board h2 {
+            font-size: 24px;
+            margin-left: 20px;
+            align-items: center;
+        }
+
+        .welcome-board p {
+            font-size: 22px;
+            width: 100%;
+            font-weight: 600;
+            word-break: break-word;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .toggle-button-container {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 columns */
+            gap: 20px;
+            /* Space between buttons */
+        }
+
+        
+        .join-in {
+            width: 120px;
+            font-size: 16px;
+            margin-right: 20px;
+            margin-top: 320px;   
+        }
+
+
+        .button {
+            padding: 10px 15px;
+        }
+    }
+
+    /* why LYFEX*/
+
+    .section-container {
+        padding: 20px;
+    }
+
+    .yh2 {
+        font-size: 38px;
+        margin-bottom: 30px;
+        justify-content: center;
+        color: #bd9118;
+        display: flex;
+    }
+
+    .ylcontainer {
+        text-align: center;
+        padding: 20px;
+        /* height: 700px; */
+        background: linear-gradient(to bottom, #f1ecdc, #f0e5c0,#f4dc91);
+    }
+
+    .bannerr {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #e2cb71;
+        border: 2px solid #c38022;
+        color: #0d1d5f;
+        text-shadow: 8px #000000;
+        font-weight: bold;
+        font-size: 26px;
+        padding: 15px;
+        margin: 30px auto;
+        width: fit-content;
+        border-radius: 5px;
+        text-transform: uppercase;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 480px) {
+        .bannerr {
+            font-size: 20px;
+            /* Adjust banner font size for very small screens */
+            padding: 10px;
+            margin: 20px 10px;
+            /* Reduce padding for the banner */
+        }
+    }
+
+    .ylcard-container {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        flex-wrap: wrap;
+        height: 520px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    /* Scrollbar Styling for Webkit Browsers */
+    
+    .ylcard-container::-webkit-scrollbar {
+        width: 10px;
+        /* Width of the scrollbar */
+    }
+    /* Scrollbar Track */
+    
+    .ylcard-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        /* Background color of the scrollbar track */
+        border-radius: 5px;
+        /* Rounded corners for the track */
+    }
+    
+    .ylcard-container::-webkit-scrollbar-thumb {
+        background: #888;
+        /* Color of the scrollbar thumb */
+        border-radius: 5px;
+        /* Rounded corners for the thumb */
+    }
+    
+    .ylcard-container {
+        scrollbar-width: thin;
+        /* Narrow scrollbar */
+        scrollbar-color: #888 #f1f1f1;
+        /* Thumb color, track color */
+    }
+    .ylcard {
+        width: 360px;
+        height: 440px;
+        background: linear-gradient(to bottom, rgb(255, 191, 0), rgb(231, 206, 133), rgb(244, 232, 197));
+        border-radius: 45px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    
+    .ylcard:hover {
+        transform: translateY(-10px);
+    }
+    
+    .ylcard p {
+        font-size: 1.1rem;
+        line-height: 1.2;
+        color: #151515;
+        padding: 0px 34px;
+    }
+    
+    .ylcard-image {
+        width: 368px;
+        height: 228px !important;
+        object-fit: cover;
+    }
+    
+    .ylcard h2 {
+        color: #000;
+        font-size: 1.4rem;
+        padding: 10px;
+        padding-bottom: 20px;
+        margin: 0;
+    }
+
+    /* Info Boxes Container */
+
+    .info-box-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    /* Info Box Styling */
+
+    .info-box {
+        background: linear-gradient(135deg, rgb(244, 240, 198), rgb(237, 227, 124), rgb(244, 240, 198));
+        border-radius: 10px;
+        display: flex;
+        padding: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: rgb(119, 91, 0);
+        font-size: 25px;
+        font-weight: bold;
+        transition: transform 0.3s ease, height 0.3s ease, width 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Info Box Content */
+
+    .info-content {
+        position: absolute;
+        opacity: 0;
+        font-size: 16px;
+        padding: 35px;
+        transition: opacity 0.3s ease;
+        text-align: left;
+    }
+
+    .info-box:hover .info-content {
+        opacity: 1;
+    }
+
+    .info-title {
+        z-index: 1;
+        font-size: 20px;
+    }
+
+    /* Responsive Design */
+
+    @media (max-width: 768px) {
+        .info-box {
+            padding: 30px;
+            height: 170px;
+        }
+
+        .info-content {
+            font-size: 14px;
+        }
+
+        .info-title {
+            z-index: 1;
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .info-box {
+            padding: 30px;
+            height: 180px;
+        }
+
+        .info-content {
+            font-size: 12px;
+        }
+
+        .info-title {
+            z-index: 1;
+            font-size: 12px;
+        }
+    }
+
+    /* how Long Term Internship works*/
+
+   
+    .ltworkcontainer {
+        width: 80%;
+        margin: auto;
+    }
+
+    .ltwork {
+        border-right: 4px solid #f3af12;
+        height: 240px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px 10px 30px 10px;
+        margin: 50px 15px 30px 15px;
+        overflow: hidden;
+        position: relative;
+        background: #f4f2ec;
+        border-radius: 10px;
+    }
+
+    .ltwork:before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: -17px;
+        border-top: 25px solid #f3af12;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        transform: rotate(45deg);
+    }
+
+    .ltwork:after {
+        content: "";
+        position: absolute;
+        top: -4px;
+        left: -17px;
+        border-top: 25px solid #f3af12;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        transform: rotate(135deg);
+    }
+
+    .ltwork .description {
+        font-size: 16px;
+        letter-spacing: 0px;
+        color: #000000;
+        line-height: 23px;
+        margin: 12px;
+        text-align: center;
+    }
+
+    .ltwork .title {
+        font-size: 20px;
+        font-family: Arial, Helvetica;
+        font-weight: 790;
+        text-align: center;
+        color: #000000;
+        margin: 0;
+    }
+
+    .ltwork .post {
+        display: inline-block;
+        font-size: 17px;
+        color: #d1af29;
+        font-style: italic;
+    }
+
+    .owl-theme .owl-controls .owl-page span {
+        border: 2px solid #a2982a;
+        background: #fff !important;
+        border-radius: 50px !important;
+        opacity: 1;
+    }
+
+    .owl-theme .owl-controls .owl-page.active span,
+    .owl-theme .owl-controls .owl-page:hover span {
+        background: #d6ad1a !important;
+        border-color: #dbc415;
+    }
+
+    /* @media only screen and (max-width: 767px) {
+        .ltwork {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .ltwork .pic {
+            display: block;
+            position: static;
+            margin: 0 auto 15px;
+        }
+
+        .ltwork .description {
+            letter-spacing: 0.5px;
+        }
+      
+    }
+    @media only screen and (min-width: 770px) and (max-width: 1200px) {
+        .ltwork .description{
+            font-size: 13px;
+            line-height: 15px;
+        }
+        .ltwork .title{
+            font-size: 18px;
+        }
+        .ltwork{
+            padding: 15px 8px 8px 8px;
+        }
+    }
+    @media only screen and (max-width: 420px){
+        .ltwork .description{
+            font-size: 12px;
+            line-height: 15px;
+        }
+        .ltwork .title{
+            font-size: 18px;
+        }
+        .ltwork{
+            padding: 15px 8px 8px 8px;
+        }
+    }
+    @media only screen and (max-width: 1343px) {
+        .ltwork .description{
+            font-size: 15px;
+        }
+        
+        .ltwork .title{
+            font-size: 20px;
+        }
+
+    } */
+
+    @media only screen and (max-width: 767px) {
+    .ltwork .title {
+        font-size: 18px; /* Mobile ke liye chhota title */
+    }
+    .ltwork .description {
+        font-size: 14px; /* Mobile ke liye chhota description */
+        line-height: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .ltwork .title {
+        font-size: 20px; /* Tablet ke liye */
+    }
+    .ltwork .description {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .ltwork .title {
+        font-size: 22px; /* Desktop ke liye bada title */
+    }
+    .ltwork .description {
+        font-size: 18px; /* Desktop par readable text */
+        line-height: 25px;
+    }
+}
+
+
+
+    /* lyfex jscompanies css */
+
+    .jscompanies_container {
+        text-align: center;
+        padding: 40px;
+        background: linear-gradient(to bottom, #f1ecdc, #f0e5c0, #f4dc91);
+    }
+
+    .jscompaniestitle {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #4f2f83;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        border: 2px solid #4f2f83;
+        display: inline-block;
+        padding: 10px 30px;
+        border-radius: 5px;
+    }
+
+    .jscompanies {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .jscompaniescard {
+        width: 269px;
+        height: 296px;
+        background-color: #383737;
+        border-radius: 41px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 2px;
+        border-color: black;
+        transition: transform 0.3s;
+    }
+
+    .jscompaniescard img {
+        width: 264px;
+        height: 235px;
+        object-fit: cover;
+        border-radius: 39px;
+    }
+
+    .jscompaniescard-content {
+        padding: 15px 0;
+    }
+
+    .jscompaniescard-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+
+    .jscompaniesphase {
+        font-size: 1.7rem;
+        font-weight: bold;
+        color: #8d703b;
+        margin: 15px;
+        margin-bottom: 10px;
+    }
+
+    .jscompaniesdescription {
+        font-size: 1.2rem;
+        line-height: 1.2;
+        color: #333;
+        padding-left: 10px;
+    }
+
+    .jscompaniescard:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /*js students css*/
+
+    .ltistud {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ltistudentscontainer {
+        width: 80%;
+        border-radius: 8px;
+        left: 40%;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .ltistudentsgrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        height: auto;
+        border: 2px solid #f1e4b3;
+    }
+
+    .ltistudentsbox {
+        padding: 40px;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        text-align: left;
+        color: #4a4a4a;
+    }
+
+    .ltistudentstitle {
+        font-weight: bold;
+        margin-bottom: 12px;
+        font-size: 1.4rem;
+    }
+
+    .banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #e2cb71;
+        border: 2px solid #c38022;
+        color: #0d1d5f;
+        text-shadow: 8px #000000;
+        font-weight: bold;
+        font-size: 26px;
+        padding: 15px;
+        margin: 80px auto;
+        margin-bottom: 100px;
+        width: fit-content;
+        border-radius: 5px;
+        text-transform: uppercase;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Styles */
+
+    @media (max-width: 768px) {
+        .ltistudentsgrid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .ltistudentsbox {
+            padding: 12px;
+            font-size: 1rem;
+        }
+
+        .ltistudentscontainer {
+            width: 90%;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .Itstudentsbox {
+            padding: 5px;
+            font-size: 1rem;
+        }
+
+        .ltistudentsbox {
+            padding: 8px !important;
+            font-size: 0.8rem;
+        }
+
+        .ltistudentstitle {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+    }
+
+    /* y lyfex css*/
+
+    .lticontainer {
+        text-align: center;
+        padding: 20px;
+        height: 700px;
+        background: linear-gradient(to bottom, #f1ecdc, #f0e5c0, #f4dc91);
+    }
+
+    .ltititle {
+        font-size: 2rem;
+        color: #4f2f83;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background-color: #f3e7cb;
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+
+
+
+    .banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffe064;
+        border: 2px solid #c38022;
+        color: #0d1d5f;
+        text-shadow: 8px #000000;
+        font-weight: bold;
+        font-size: 26px;
+        padding: 15px;
+        margin: 80px auto;
+        margin-bottom: 100px;
+        width: fit-content;
+        border-radius: 5px;
+        text-transform: uppercase;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width:900px) {
+        .banner {
+            margin: 40px auto;
+        }
+    }
+
+    @media (max-width:650px) {
+        .banner {
+            font-size: 18px;
+        }
+    }
+    @media (max-width:360px) {
+        .banner {
+            font-size: 14px;
+        }
+        .ctacontainer{
+            height: 344px !important;
+        }
+
+    }
+    @media (max-width:420px) {
+        .ctacontainer {
+            padding: 11px 10px !important;
+        }
+
+    }
+    @media (max-width:620px) {
+       .ctacontainer{
+        height: 437px ;
+       }
+    }
+ 
+
+
+    /* patners logos*
+    
+    .patnerscontainer {
+        background: linear-gradient(to bottom, #f1ecdc, #f0e5c0, #f4dc91);
+    }*/
+
+    .partners-slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .slick-slide {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+    }
+
+    .slick-prev,
+    .slick-next {
+        background-color: #ffa500;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .slick-prev:hover,
+    .slick-next:hover {
+        background-color: #ff8500;
+    }
+
+    .slick-prev::before,
+    .slick-next::before {
+        font-size: 20px;
+        color: #fff;
+    }
+
+    .partner-logo {
+        height: 110px;
+        padding: 20px;
+    }
+
+    .partner-logo img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    .banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #e2cb71;
+        border: 2px solid #c38022;
+        color: #0d1d5f;
+        text-shadow: 8px #000000;
+        font-weight: bold;
+        /* font-size: 26px; */
+        padding: 15px;
+        margin: 40px auto;
+        margin-bottom: 50px;
+        width: fit-content;
+        border-radius: 5px;
+        text-transform: uppercase;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Feedback Section */
+
+    .feedback-section {
+        padding: 40px 10%;
+        background: linear-gradient(to bottom, #f7f7f7, #f3e9d5);
+        text-align: center;
+    }
+
+    .headcontainer h2 {
+        font-size: 40px;
+        color: #333;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .headcontainer p {
+        color: #666;
+        font-size: 18px;
+        line-height: 1.5;
+        max-width: 700px;
+        margin: 0 auto 30px;
+    }
+
+    .video-container .video {
+        display: none;
+    }
+
+    .video-container .video.active {
+        display: block;
+    }
+
+    .video-navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+        gap: 20px;
+    }
+
+    .video-card h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .video-navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        gap: 40px;
+        margin-left: -60px;
+    }
+
+    .video-navigation button {
+        background-color: #9e6f00;
+        color: white;
+        border: none;
+        padding: 15px 20px;
+        font-size: 24px;
+        font-weight: bold;
+        border-radius: 40%;
+        cursor: pointer;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+    }
+
+    .video-navigation button:hover {
+        transform: scale(1.1);
+    }
+
+    .feedback-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: #ffe5ad;
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .video-card iframe {
+        width: 100%;
+        width: 550px;
+        max-width: 600px;
+        height: 340px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container {
+        background-color: #ffd062;
+        padding: 20px 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .form-container h3 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+
+    form button {
+        background-color: #9e6f00;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    form button:hover {
+        background-color: #fabc2b;
+        color: #000;
+    }
+
+    /* Responsive Design */
+
+    @media (max-width: 768px) {
+        .feedback-section {
+            padding: 30px;
+        }
+
+        .feedback-content {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 250px;
+        }
+
+        .video-navigation {
+            align-items: center;
+            margin: 20px auto;
+            justify-content: center;
+        }
+    }
+
+    /* footer css */
+      /* footer css */
+
+      footer {
+        background-color: black;
+        color: white;
+        padding: 40px 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .footer-column {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .footer-column h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        color: #f0a500;
+    }
+
+    .footer-column p,
+    .footer-column a {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #dcdcdc;
+        text-decoration: none;
+    }
+
+    .footer-column a:hover {
+        color: #eba037;
+    }
+
+    .social-media-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .social-media-icons a {
+        font-size: 20px;
+        color: #dcdcdc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .social-media-icons a:hover {
+        color: #eba037;
+    }
+
+    .footer-bottom-bar {
+        text-align: center;
+        margin-top: 30px;
+        border-top: 1px solid #444;
+        padding-top: 10px;
+    }
+
+    .cta-button {
+        background-color: #f0a500;
+        color: black !important;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 12px !important;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .cta-button:hover {
+        background-color: #e58600;
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            align-items: flex-start;
+        }
+
+        .footer-column {
+            margin-bottom: 20px;
+        }
+    }
+
+
+    .combenifits .post {
+        display: inline-block;
+        font-size: 17px;
+        color: #d1af29;
+        font-style: italic;
+    }
+
+    .owl-theme .owl-controls .owl-page span {
+        border: 2px solid #a2982a;
+        background: #fff !important;
+        border-radius: 50px !important;
+        opacity: 1;
+    }
+
+    .owl-theme .owl-controls .owl-page.active span,
+    .owl-theme .owl-controls .owl-page:hover span {
+        background: #d6ad1a !important;
+        border-color: #dbc415;
+    }
+    
+
+
+
+
+
+    /*cta css*/
+    /*cta container*/
+
+    .cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .ctacontainer {
+        padding: 40px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(to bottom, #fff59d, #ffe082);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 50px auto;
+        width: 1200px;
+        height: 350px;
+    }
+
+    .ctatext-section {
+        max-width: 50%;
+    }
+
+    .ctatext-section h1,
+    .ctatext-section p {
+        color: #000;
+        margin-bottom: 10px;
+    }
+
+    .ctatext-section h1 {
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    .ctatext-section p {
+        font-size: 18px;
+    }
+
+    .ctajoin-button {
+        margin-top: 20px;
+        display: inline-block;
+        background-color: #ffca28;
+        color: #000;
+        font-weight: bold;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .ctajoin-button:hover {
+        background-color: #ffc107;
+    }
+
+    .ctaimage-section {
+        width: 40%;
+        height: 100%;
+        background-color: #d3d3d3;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: #555;
+        font-weight: bold;
+    }
+
+    .ctaimage-section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Ensures the image covers the section without distortion */
+    }
+
+    @media (max-width: 780px) {
+        .cta {
+            padding: 0px;
+        }
+        .ctacontainer{
+            padding: 10px 10px !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .ctatext-section h1 {
+            font-size: 25px;
+        }
+
+        .ctatext-section p {
+            font-size: 20px;
+        }
+
+        .ctajoin-button {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .ctaimage-section {
+            height: 80%;
+        }
+    }
+
+    
+ .jsworkcontainer {
+        width: 70%;
+        margin: 30px auto;
+    }
+
+ @media only screen and (max-width: 767px) {
+
+               .jsworkcontainer {
+            width: 90%;
+            margin: auto;
+        }
+
+     }
+
+
+    .pathwaycard img {
+        width: 270px !important;
+        height: 230px;
+        object-fit: cover;
+        border-radius: 29px;
+    }
+
+    .jswork {
+        /* width: 300px; */
+        height: 305px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+        /* padding: 10px; */
+        margin: 15px;
+        overflow: hidden;
+        position: relative;
+        background: #c1a00f;
+        border: 5px solid #c1a00f;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .jswork .jsdescription {
+        font-size: 21px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        white-space: wrap;
+    }
+
+    .jswork .title {
+        font-size: 28px;
+        font-family: Arial, Helvetica;
+        font-weight: 790;
+        text-align: center;
+        color: #fc9f13;
+        margin-bottom: 10px;
+    }
+
+@media only screen and (max-width: 767px) {
+
+        /*.jswork {
+            padding: 20px;
+            text-align: center;
+        }*/
+        .jsworkcontainer {
+            width: 90%;
+            margin: auto;
+        }
+
+        .jswork .title {
+            margin-top: 0px;
+        }
+    
+    }
+    
+      .fix{
+        width: 10%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
+      .mainnav{
+      display: flex;
+      width: 80%;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @media (max-width: 490px) {
+        .mainnav{
+            width: 50%;
+        }
+    }
+    @media (max-width: 980px) {
+        .mainnav{
+            width: 55%;
+        }
+    }
+</style>
+
+</style>
+
+<body>
+
+    <nav class="navbar">
+        <div class="mainnav">
+
+            <div class="logo">
+                <a href="index.html"><img src="Assets/Logo.png" alt="LYFeX Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="homepage.html" id="dashboardButton" style="display: none;">Dashboard</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">
+                        Programs <span class="arrow">&#9662;</span>
+                </a>
+                <ul class="dropdown-content">
+                    <li><a href="insurance.html">Insurance</a></li>
+                    <li><a href="Job_Shadowing.html">Shadowing</a></li>
+                    <li><a href="longterm.html">Long Term Internship</a></li>
+                    
+                </ul>
+            </li>
+            <li><a href="Mentors.html">Mentors</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li class="mentor-btn"><a href="mentorform.html" id="join" style="color: rgb(223, 130, 0);">Join as Mentor</a></li>
+        </ul>
+    </div>
+        <div class="fix">
+            
+            <div class="auth-links">
+                <button id="showProfile" class="btn-profile hidden">
+                    <img
+                    src="https://ui-avatars.com/api/?name=User&background=F5A623&color=fff"
+                    alt="Profile"
+                    class="profile-img"
+                    />
+                </button>
+                <button id="showLoginBtn" class="btn-login">Login</button>
+                <button id="showRegisterBtn" class="btn-register">Register</button>
+            </div>
+          </div>
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <script>
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const dropdownToggles = document.querySelectorAll('.dropbtn');
+
+            // Toggle the mobile menu
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Toggle the dropdown menu on click
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent the default link behavior
+                    const dropdownContent = toggle.nextElementSibling; // Get the dropdown content
+                    dropdownContent.classList.toggle('active'); // Toggle visibility of the dropdown
+
+                    // Close other dropdowns (optional, for better UX)
+                    dropdownToggles.forEach(otherToggle => {
+                        if (otherToggle !== toggle) {
+                            const otherDropdown = otherToggle.nextElementSibling;
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        </script>
+    </nav>
+<div id="dashboard" class="dashboard">
+
+    <section class="main-section">
+        <!--<h1 class="main-title">Consistency is the 🔑</h1>
+
+        <div class="welcome-board">
+         <h1>Welcome to LYFeX</h1> 
+            <h2 id="h">Long Term Internship</h2>
+            <h2 id="hh">Startups grow with talent, and students<br> thrive with real-world experience</h2>-->
+        <!-- <button class="join-in" onclick="toggleButtonContainer()">Join In</button> -->
+
+        <button class="join-in"><a href="Job_Shandowing_form.html">Join In</a></button>
+
+
+        <!-- <div class="toggle-button-container" id="button-container" style="display: none;">
+            <a href="school form.html" class="button">Schools</a>
+            <a href="college form.html" class="button">Colleges</a>
+            <a href="companyform.html" class="button">Companies</a>
+            <a href="mentorform.html" class="button">Mentors</a>
+        </div> -->
+    </section>
+
+    <script>
+        function toggleButtonContainer() {
+            const container = document.querySelector('.toggle-button-container');
+            if (container.style.display === 'none') {
+                container.style.display = 'flex';
+            } else {
+                container.style.display = 'none';
+            }
+        }
+    </script>
+
+
+
+    <section id="how-lyfex-works" style=" text-align: center;">
+        <div class="info-box-container">
+            <div class="info-box" id="mission">
+                <div class="info-title"> 
+                    The LYFeX Job Shadowing Program offers an observation-based learning experience to help students explore various career paths.
+                     The program is focused on developing cognitive skills and helping students gain clarity about their future career choices. 
+                    It encourages self-learning, allowing students to uncover their true interests and make informed decisions regarding their career direction. 
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How LYFeX Long-Term Internship Works -->
+    <div class="banner">How LYFeX Shadowing Works</div>
+    <div class="ltworkcontainer">
+        <div id="ltwork-slider" class="owl-carousel">
+            <div class="ltwork">
+                <h3 class="title">Understanding Interests</h3>
+                <p class="description">
+                    The <b>LYFeX team</b> meets with students to understand their interests, strengths, and aspirations through one-on-one or group discussions.
+                 </p>
+            </div>
+
+            <div class="ltwork">
+                <h3 class="title">Expert Matchmaking</h3>
+                <p class="description">
+                    Based on the insights gathered, students are paired with <b>professionals (mentors)</b> in relevant fields for the shadowing experience.
+                </p>
+            </div>
+
+            <div class="ltwork">
+                <h3 class="title">⁠Orientation Program <br>(2 Days)</h3>
+                <p class="description">
+                   An introductory orientation prepares students by explaining expectations, behavioral standards, and the shadowing process—emphasizing <b>observation, self-driven learning,</b> and <b>reflection</b>.
+                </p>
+            </div>
+
+            <div class="ltwork">
+                <h3 class="title">Shadowing Program <br>(3 Months)</h3>
+                <p class="description">
+                  Students engage in <b>observation-based learning</b>, spending time with mentors, and observing daily activities, decision-making processes, and workflows in real-world settings.
+                </p>
+            </div>
+
+            <div class="ltwork">
+                <h3 class="title">⁠Self-Learning Focus</h3>
+                <p class="description">
+                   Mentors guide the students through observation, not direct teaching. The program is built on <b>self-learning</b>, where students analyze and reflect on what they observe, ask questions, and seek clarifications to deepen their understanding. </p>
+            </div>
+
+
+            <div class="ltwork">
+                <h3 class="title"> Post- Program Reflection</h3>
+                <p class="description">
+                    At the end of the 3 months, students reflect on whether the field and mentor align with their interests.<br>
+                    If<b> yes</b>, the program continues for another quarter.<br>
+                    If<b> no</b>, students can explore a different field or mentor in the next cycle.
+                </p>
+            </div>
+
+            <div class="ltwork">
+                <h3 class="title">Continuation</h3>
+                <p class="description">
+                    Students can continue the shadowing program until they find their passion and an ideal mentor.
+                </p>
+            </div>
+
+            <div class="ltwork">
+                <h3 class="title">Reporting</h3>
+                <p class="description">
+                    LYFeX provides a <b>detailed report</b> to students, parents, and schools, outlining progress and key observations.
+                </p>
+            </div>
+
+            <div class="ltwork">
+                <h3 class="title">Behavioral Analysis</h3>
+                <p class="description">
+                    Instead of grades, a <b>behavioral analysis report</b> is shared, focusing on:<br> <b>Cognitive development</b><br> <b>Engagement and initiative</b><br> <b>Problem-solving and adaptability</b>
+                </p>
+            </div>
+
+            <div class="ltwork">
+                <h3 class="title">Certificate</h3>
+                <p class="description">
+                   At the end of the program, a <b>yearly certificate</b> is awarded, summarizing the student’s participation, achievements, and skills developed during the program
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="banner">Shadowing for Students</div>
+    <div class="ltistud">
+        <div class="ltistudentscontainer">
+
+            <div class="ltistudentsgrid">
+                <div class="ltistudentsbox" style="background-color: #f7f0e6;">
+                    <div class="ltistudentstitle">Career clarity</div>
+                    Students gain first-hand exposure to various professions, helping them make informed decisions about their career interests and goals.
+                </div>
+
+                <div class="ltistudentsbox" style="background-color: #ffe76d;">
+                    <div class="ltistudentstitle">Real-World Experience</div>
+                    Through observation, students learn about real-life workflows, decision-making processes, and daily responsibilities, thus developing a deeper understanding of the profession. 
+                </div>
+
+                <div class="ltistudentsbox" style="background-color: #ffe76d;">
+                    <div class="ltistudentstitle">Development of Cognitive Skills</div>
+                    Observing professionals in action encourages students to think critically, analyze situations, and develop problem-solving abilities in a real-world context.
+
+
+                </div>
+
+                <div class="ltistudentsbox" style="background-color: #f7f0e6;">
+                    <div class="ltistudentstitle">Increased Confidence</div>
+                    Engaging with professionals and actively participating in the learning process boosts students’ confidence, preparing them for future challenges in their chosen careers.
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+   <div class="ylcontainer">
+        <div class="bannerr">School Benefits from Shadowing</div>
+        <div class="ylcard-container">
+            <!-- School Card -->
+            <div class="ylcard">
+                <img src="Assets/Enhanced student engagement.jpg" alt="School Image" class="ylcard-image">
+                <h2>Enhanced Student Engagement</h2>
+                <p>Provide students with unique, hands-on learning experiences that increase their interest and motivation in academics and career planning.</p>
+            </div>
+            <!-- Colleges Card -->
+            <div class="ylcard">
+                <img src="Assets/Career Readiness program.jpg" alt="College Image" class="ylcard-image">
+                <h2>Career Readiness Program</h2>
+                <p>Equip students with practical knowledge and skills, preparing them for the challenges of higher education and professional life.</p>
+            </div>
+            <!-- Companies Card -->
+            <div class="ylcard">
+                <img src="Assets/Holistic development.jpg" alt="Company Image" class="ylcard-image">
+                <h2>Holistic Development</h2>
+                <p> Encourage emotional and social growth among students by exposing them to real-world environments and challenges.</p>
+            </div>
+
+            <div class="ylcard">
+                <img src="Assets/Strengthened school reputation.jpg" alt="Company Image" class="ylcard-image">
+                <h2>Strengthened School Reputation</h2>
+                <p>Stand out as a forward-thinking institution offering innovative programs that prepare students for success.</p>
+            </div>
+
+            <div class="ylcard">
+                <img src="Assets/Valuable partnership.jpg" alt="Company Image" class="ylcard-image">
+                <h2>Valuable Partnerships</h2>
+                <p>Collaborate with industry professionals and organizations to provide enriched learning opportunities for students.</p>
+            </div>
+
+            <div class="ylcard">
+                <img src="Assets/Parents Satisfaction.jpg" alt="Company Image" class="ylcard-image">
+                <h2>Parent Satisfaction</h2>
+                <p> Build trust and satisfaction among parents by demonstrating a commitment to their child’s future and providing career clarity early on.</p>
+            </div>
+
+           <!-- <div class="ylcard">
+                <img src="Customized curriculum support.jpg" alt="Company Image" class="ylcard-image">
+                <h2>Customized Curriculum Support</h2>
+                <p> Complement traditional education with experiential learning opportunities that bridge the gap between academics and the industry.</p>
+            </div>
+
+            <div class="ylcard">
+                <img src="Leadership opportunities for students.jpg" alt="Company Image" class="ylcard-image">
+                <h2>Leadership Opportunities for Students</h2>
+                <p>Help students develop leadership skills through interaction with professionals and exposure to workplace dynamics.</p>
+            </div>
+
+            <div class="ylcard">
+                <img src="Alumini success stories.jpg" alt="Company Image" class="ylcard-image">
+                <h2>Alumni Success Stories</h2>
+                <p> Cultivate future-ready students who will credit the school for playing a key role in shaping their successful careers.</p>
+            </div>-->
+
+
+        </div>
+        <br>
+        <br>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initialize Owl Carousel
+            $("#ltwork-slider").owlCarousel({
+                items: 3,
+                pagination: true,
+                navigation: false,
+                slideSpeed: 1000,
+                responsive: true
+            });
+
+            // Initialize Slick Carousel
+            $('.partners-slider').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                arrows: true,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                }, {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }, {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                }]
+            });
+        });
+    </script>
+
+
+
+    <div class="banner">Shadowing For Companies</div>
+    <!-- <div class="combenifitscontainer">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="combenifits-slider" class="owl-carousel">
+                    <div class="combenifits">
+                        <div class="description">
+                            <img src="On demand resources.jpg" alt="School Image" id="img1"> </div>
+                        <h3 class="title">On-Demand Resources</h3>
+
+
+                    </div>
+
+                    <div class="combenifits">
+                        <div class="description">
+                            <img src="Long term resources availblity.jpg" alt="School Image" class="combenifits-image"> </div>
+                        <h3 class="title">Long Term Resource Availability</h3>
+
+                    </div>
+
+                    <div class="combenifits">
+                        <div class="description">
+                            <img src="minimal commitment.jpg" alt="School Image" class="combenifits-image">
+                        </div>
+                        <h3 class="title">Minimal Commitment</h3>
+
+                    </div>
+
+                    <div class="combenifits">
+                        <div class="description">
+                            <img src="Fresh perspectives.jpg" alt="School Image" class="combenifits-image">
+                        </div>
+                        <h3 class="title">Fresh Perspectives</h3>
+
+                    </div>
+
+                    <div class="combenifits">
+                        <div class="description">
+                            <img src=" cost efficiency.jpg" alt="School Image" class="combenifits-image">
+                        </div>
+                        <h3 class="title">Cost-Efficiency</h3>
+
+                    </div>
+
+                    <div class="combenifits">
+                        <div class="description">
+                            <img src="Talent pipeline development.jpg" alt="School Image" id="img1">
+                        </div>
+                        <h3 class="title">Talent Pipeline Development</h3>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="jsworkcontainer">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="jswork-slider" class="owl-carousel">
+
+                    <div class="jswork">
+                        <img src="Assets/On demand resources.jpg" alt="job images" class="pathwaycard img"
+                            style="width:100%; height:220px; border-radius: 16px">
+                        <p class="jsdescription">
+                            On-Demand Resources
+                        </p>
+                    </div>
+
+                    <div class="jswork">
+                        <img src="Assets/Long term resources availblity.jpg" alt="job images" class="pathwaycard img"
+                            style="width:100%; height:220px; border-radius: 16px">
+                        <p class="jsdescription">
+                            Long Term Resource Availability
+                        </p>
+                    </div>
+
+                    <div class="jswork">
+                        <img src="Assets/minimal commitment.jpg" alt="job images" class="pathwaycard img "
+                            style="width:100%; height:220px; border-radius: 16px">
+                        <p class="jsdescription">
+                            Minimal Commitment
+                        </p>
+                    </div>
+
+                    <div class="jswork">
+                        <img src="Assets/Fresh perspectives.jpg" alt="job images" class="pathwaycard img "
+                            style="width:100%; height:220px; border-radius: 16px">
+                        <p class="jsdescription">
+                            Fresh Perspectives
+                        </p>
+                    </div>
+
+                    <div class="jswork">
+                        <img src="Assets/cost efficiency.jpg" alt="job images" class="pathwaycard img "
+                            style="width:100%; height:220px; border-radius: 16px">
+                        <p class="jsdescription">
+                            Cost-Efficiency
+                        </p>
+                    </div>
+
+                    <div class="jswork">
+                        <img src="Assets/Talent pipeline development.jpg" alt="job images" class="pathwaycard img "
+                            style="width:100%; height:220px; border-radius: 16px">
+                        <p class="jsdescription">
+                            Talent Pipeline Development
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // $("#combenifits-slider").owlCarousel({
+            //     items: 3,
+            //     itemsDesktop: [1000, 3],
+            //     itemsDesktopSmall: [1100, 2],
+            //     itemsTablet: [730, 2],
+            //     itemsTablet: [550, 1],
+            //     pagination: true,
+            //     navigation: false,
+            //     navigationText: ["", ""],
+            //     slideSpeed: 1000,
+            //     //autoPlay: true
+            // });
+            $("#jswork-slider").owlCarousel({
+                items: 3,
+                itemsDesktop: [1500, 3],
+                itemsDesktopSmall: [990, 2],
+                itemsTablet: [768, 2],
+                pagination: true,
+                navigation: false,
+                slideSpeed: 1000,
+            });
+        });
+    </script>
+
+
+<div class="cta">
+    <div class="ctacontainer">
+        <div class="ctatext-section">
+            <h1>Early Clarity and Skilling leads to better future.</h1>
+            <p>Join LYFeX today and help children see a brighter tomorrow!</p>
+            <a href="contact.html" class="ctajoin-button">Join Us</a>
+        </div>
+        <div class="ctaimage-section">
+            <img src="https://media.istockphoto.com/id/1151224020/photo/teacher-with-preschoolers-finger-painting-at-class.jpg?s=612x612&w=0&k=20&c=oJeFNYCargky4W52WM10BrEZJ-IsvrEB6ted--3-42I=" alt="LYFeX Program">
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <div class="footer-container">
+        <!-- Column 1: About LYFeX -->
+        <div class="footer-column" style="flex-basis: 24%;">
+            <h3>About LYFeX</h3>
+            <p>LYFeX (Live Your Future Experience) is an innovative program designed to empower students by
+                providing them with early exposure to real-world careers and professional environments. By blending
+                hands-on experiences, mentorship, and emotional
+                development, LYFeX equips young minds to make informed career decisions and develop essential skills
+                for future success.</p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="insurance.html">Programs</a><br>
+            <a href="#testimonals">Testimonals</a><br>
+            <a href="#blog">Blog</a><br>
+            <a href="#faqs">FAQs</a><br>
+            <a href="#privacy-policy">Privacy Policy</a>
+        </div>
+
+        <!-- Column 3: Contact Us -->
+        <div class="footer-column" style="flex-basis: 9%;">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:hi@thelyfex.com">hi@thelyfex.com</a></p>
+            <p>Phone: +91-XXX-XXX-XXXX</p>
+            <p>Address: D-57, 100 Feet Rd, Chhatarpur Hills, Pocket D, Chattarpur Enclave, Chhatarpur, New Delhi,
+                Delhi 110074</p>
+        </div>
+
+        <!-- Column 4: Social Media & Subscribe -->
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <div class="social-media-icons">
+                <a href="https://www.facebook.com/profile.php?id=61572591537307" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/thelyf_x/" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/thelyfex/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@LYFeX4u" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <a href="#subscribe" class="cta-button">Subscribe to Newsletter</a>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom-bar">
+        <p>© 2024 LYFeX. All rights reserved.</p>
+    </div>
+</footer>
+</div>
+  <!-- Login Form -->
+  <div id="loginForm" class="auth-form hidden">
+    <div class="auth-form-content">
+      <a href="#" class="back-button" id="backToMain">&#8592;</a>
+      <h1>WELCOME TO LYFeX!</h1>
+      <p class="subtitle">Hello there, sign in to continue!</p>
+
+      <form id="login">
+        <div class="form-group">
+          <label>Email address</label>
+          <div class="input-wrapper">
+            <input type="email" id="loginEmail" placeholder="xyz@gmail.com" required />
+            <span class="check-mark">✓</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="loginPassword" placeholder="******" required />
+            <button type="button" class="toggle-password">👁</button>
+          </div>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+        <div id="signInMessage" class="message"></div>
+        <button type="submit" class="btn-primary">LOGIN</button>
+      </form>
+
+      <div class="social-login">
+        <p>Or Login with</p>
+        <div class="social-buttons">
+          <button class="social-btn google-btn">
+            <img
+              src="Assets/google.png"
+              alt="Google"
+            />
+            Connect with Google
+          </button>
+          <button class="social-btn facebook-btn">
+            <img
+              src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/facebook.svg"
+              alt="Facebook"
+            />
+            Connect with Facebook
+          </button>
+        </div>
+      </div>
+
+      <p class="switch-form">
+        Don't have an account? <a href="#" id="showRegister">Register!</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Register Form -->
+  <div id="registerForm" class="auth-form hidden">
+    <div class="auth-form-content">
+      <a href="#" class="back-button" id="backToMain2">&#8592;</a>
+      <h1>CREATE ACCOUNT</h1>
+      <p class="subtitle">Please enter your credentials to proceed</p>
+
+      <form id="register">
+        <div class="form-group">
+          <label>Full Name</label>
+          <div class="input-wrapper">
+            <input type="text" id="registerName" placeholder="Mokshita Bajpai" required />
+            <span class="check-mark">✓</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Phone</label>
+          <div class="input-wrapper">
+            <input type="tel" id="registerPhone" placeholder="828282***" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email address</label>
+          <div class="input-wrapper">
+            <input type="email" id="registerEmail" placeholder="xyz@gmail.com" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="registerPassword" required />
+            <button type="button" class="toggle-password">👁</button>
+          </div>
+        </div>
+        <div id="signUpMessage" class="message"></div>
+        <button type="submit" class="btn-primary">CREATE ACCOUNT</button>
+      </form>
+
+      <p class="switch-form">
+        Already have an account? <a href="#" id="showLogin">Login!</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Profile Sidebar -->
+  <div id="profileSidebar" class="sidebar">
+    <div class="sidebar-content">
+      <button id="closeSidebar" class="close-button">✖</button>
+      <h1>Profile</h1>
+      <p id="profileName"></p>
+      <p id="profileEmail"></p>
+      <button id="logoutBtn" class="btn-primary">Logout</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+
+</html>
